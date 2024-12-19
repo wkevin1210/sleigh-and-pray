@@ -10,21 +10,34 @@ var fire_rate = 1.0
 @onready var upper_bound = int(lower_bound * ((1.0 -
 												$Camera.drag_top_margin)/ 2.0))
 
+#Vars for sliding
+const MAXSPEED = 500
+const ACCEL = 300
+const DECEL = 300
+
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 	#Handle one-way camera
-	if direction != Vector2(0,1) and direction != Vector2(0,0):
-		if position.y < upper_bound:
-			lower_bound -= upper_bound - position.y
-			upper_bound = position.y
-			
-	velocity = direction * 300
+	if position.y < upper_bound:
+		lower_bound -= upper_bound - position.y
+		upper_bound = position.y
+	
+	#Handle sliding movement
+	if direction != Vector2.ZERO:
+		velocity = velocity.move_toward(direction * MAXSPEED, ACCEL * delta)
+	else:
+		if position.y == lower_bound:
+		#Allow player to instantly accelerate if at border
+			velocity = Vector2.ZERO
+		else:
+			velocity = velocity.move_toward(Vector2.ZERO, DECEL * delta)
 	move_and_slide()
 	
 	#Prevent player from moving backwards
 	if position.y > lower_bound:
 		position.y = lower_bound
+	print(lower_bound)
 
 	look_at(get_global_mouse_position())
 

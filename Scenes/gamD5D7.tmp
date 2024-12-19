@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://x3uqphg7caio"]
+
+[ext_resource type="Script" path="res://Scenes/backstop.gd" id="1_dimed"]
+[ext_resource type="PackedScene" uid="uid://du8dyk7a1ot0x" path="res://Scenes/background.tscn" id="1_ut0j4"]
+[ext_resource type="PackedScene" uid="uid://co5v4v1vt78af" path="res://Scenes/player.tscn" id="2_n6qu3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ku1g1"]
+size = Vector2(2332.71, 95.5653)
+
+[sub_resource type="GDScript" id="GDScript_rhasj"]
+script/source = "extends CharacterBody2D
+
+var shoot_timer = 0.0
+var fire_rate = 1 #In seconds
+var isShooting = false
+
+func _physics_process(delta: float) -> void:
+	var direction = Input.get_vector(\"move_left\", \"move_right\", \"move_up\", \"move_down\")
+	
+	velocity = direction * 300
+	
+	move_and_slide()
+	look_at(get_global_mouse_position())
+	
+	if Input.is_action_pressed(\"shoot\"):
+		if isShooting:
+			shoot_timer += delta
+			if shoot_timer >= fire_rate:
+				shoot()
+				shoot_timer = 0
+		else:
+			shoot()
+			isShooting = true
+			shoot_timer = 0
+
+@export var damage = 10
+
+func shoot():
+	const BULLET = preload(\"res://Scenes/bullet.tscn\")
+	
+	var new_bullet = BULLET.instantiate()
+	new_bullet.damage = damage
+	new_bullet.global_position = %ShootingPoint.global_position
+	new_bullet.global_rotation = %ShootingPoint.global_rotation
+	%ShootingPoint.add_child(new_bullet)
+"
+
+[node name="Game" type="Node2D"]
+
+[node name="Backstop" type="CharacterBody2D" parent="."]
+position = Vector2(577, 324)
+scale = Vector2(0.530005, 0.530005)
+script = ExtResource("1_dimed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backstop"]
+position = Vector2(-24.5281, 572.306)
+shape = SubResource("RectangleShape2D_ku1g1")
+
+[node name="Background" parent="." instance=ExtResource("1_ut0j4")]
+
+[node name="Player" parent="." instance=ExtResource("2_n6qu3")]
+position = Vector2(577, 324)
+scale = Vector2(0.530005, 0.530005)
+script = SubResource("GDScript_rhasj")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://du8dyk7a1ot0x"]
+
+[ext_resource type="Texture2D" uid="uid://bbslux38xqguj" path="res://assets/FilledCircle.png" id="1_6nxqx"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Parallax" type="ParallaxBackground" parent="."]
+scale = Vector2(12.2257, 5.10349)
+transform = Transform2D(12.2257, 0, 0, 5.10349, 0, 0)
+
+[node name="BG" type="ParallaxLayer" parent="Parallax"]
+position = Vector2(1.04308e-07, -1.19209e-07)
+scale = Vector2(0.957081, 1.03596)
+motion_mirroring = Vector2(0, 50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/BG"]
+position = Vector2(1.53833, 3.972)
+scale = Vector2(0.0646504, 0.0325956)
+texture = ExtResource("1_6nxqx")
+centered = false

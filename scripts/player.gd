@@ -37,7 +37,6 @@ func _physics_process(delta: float) -> void:
 	#Prevent player from moving backwards
 	if position.y > lower_bound:
 		position.y = lower_bound
-	print(lower_bound)
 
 	look_at(get_global_mouse_position())
 

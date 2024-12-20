@@ -1,15 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://x3uqphg7caio"]
+[gd_scene load_steps=7 format=3 uid="uid://x3uqphg7caio"]
 
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_c5ygc"]
 [ext_resource type="PackedScene" uid="uid://du8dyk7a1ot0x" path="res://Scenes/background.tscn" id="1_ut0j4"]
 [ext_resource type="PackedScene" uid="uid://co5v4v1vt78af" path="res://Scenes/player.tscn" id="2_n6qu3"]
+[ext_resource type="Script" path="res://Scenes/spawn_path.gd" id="3_51qkx"]
+
+[sub_resource type="Curve2D" id="Curve2D_31iaf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -476, -455, 0, 0, 0, 0, 459, -476, 0, 0, 0, 0, -29, -433, 0, 0, 0, 0, -476, -455)
+}
+point_count = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwplh"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_c5ygc")
 
 [node name="Background" parent="." instance=ExtResource("1_ut0j4")]
 
+[node name="SpawnPath" type="Path2D" parent="."]
+position = Vector2(576, 324)
+curve = SubResource("Curve2D_31iaf")
+script = ExtResource("3_51qkx")
+
+[node name="SpawnPoint" type="PathFollow2D" parent="SpawnPath"]
+unique_name_in_owner = true
+position = Vector2(-476, -455)
+rotation = -0.0224561
+
 [node name="Player" parent="." instance=ExtResource("2_n6qu3")]
+unique_name_in_owner = true
 position = Vector2(576, 324)
 
 [node name="LeftWall" type="StaticBody2D" parent="."]

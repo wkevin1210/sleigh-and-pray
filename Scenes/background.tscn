@@ -9,5 +9,6 @@ repeat_size = Vector2(0, 640)
 
 [node name="Sprite2D" type="Sprite2D" parent="BG"]
 scale = Vector2(5.76, 3.24)
+
 texture = ExtResource("1_8b0aj")
 centered = false

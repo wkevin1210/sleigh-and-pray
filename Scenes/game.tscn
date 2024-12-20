@@ -15,14 +15,14 @@ position = Vector2(576, 324)
 [node name="LeftWall" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2(-9, -1e+07)
-scale = Vector2(1.569, 1e+07)
+position = Vector2(44, -1e+07)
+scale = Vector2(1.54446, 1e+07)
 shape = SubResource("RectangleShape2D_xwplh")
 
 [node name="RightWall" type="StaticBody2D" parent="."]
 position = Vector2(1158, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(-9, -1e+07)
+position = Vector2(-51, -1e+07)
 scale = Vector2(1.569, 1e+07)
 shape = SubResource("RectangleShape2D_xwplh")

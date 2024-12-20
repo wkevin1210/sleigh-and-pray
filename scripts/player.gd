@@ -11,7 +11,7 @@ var fire_rate = 1.0
 												$Camera.drag_top_margin)/ 2.0))
 
 #Vars for sliding
-const MAXSPEED = 500
+const MAXSPEED = 400
 const ACCEL = 300
 const DECEL = 300
 

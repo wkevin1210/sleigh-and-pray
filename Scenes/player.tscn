@@ -124,7 +124,7 @@ radius = 451.763
 
 height = 903.527
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
 position = Vector2(685, 382)
 script = ExtResource("1_k7o6d")
@@ -149,7 +149,7 @@ position = Vector2(31, 15)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 1.0
-drag_top_margin = 0.35
+drag_top_margin = 0.15
 drag_right_margin = 1.0
 drag_bottom_margin = 1.0
 editor_draw_drag_margin = true

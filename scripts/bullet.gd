@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var sprite : Sprite2D = $Snowball
+
 var travelled = 0
 
 func _physics_process(delta: float) -> void:
@@ -13,7 +15,8 @@ func _physics_process(delta: float) -> void:
 	
 	if travelled == RANGE:
 		queue_free()
-		
+	
+	sprite.rotation_degrees -= 4
 func _on_body_entered(body: Node2D) -> void:
 	queue_free()
 	if body.has_method("take_damage"):

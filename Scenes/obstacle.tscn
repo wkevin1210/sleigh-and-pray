@@ -1,15 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnntvybbw6xeq"]
+[gd_scene load_steps=4 format=3 uid="uid://cnntvybbw6xeq"]
 
-[ext_resource type="Texture2D" uid="uid://d2jh4yqeccbti" path="res://assets/icon.svg" id="1_cr3vd"]
+[ext_resource type="Texture2D" uid="uid://cwvtesq4e4gdv" path="res://assets/rock.png" id="1_kl04a"]
+[ext_resource type="Texture2D" uid="uid://cp8725tgjhi4q" path="res://assets/Snow.png" id="2_v3jys"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btlum"]
-size = Vector2(116, 118)
+size = Vector2(80, 80)
 
 [node name="Obstacle" type="StaticBody2D"]
-scale = Vector2(0.493796, 0.493796)
 
-[node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("1_cr3vd")
+[node name="Ice" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.85098)
+scale = Vector2(5.75, 5.75)
+texture = ExtResource("1_kl04a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_btlum")
+
+[node name="Snow" type="Sprite2D" parent="."]
+scale = Vector2(5.75, 5.75)
+texture = ExtResource("2_v3jys")

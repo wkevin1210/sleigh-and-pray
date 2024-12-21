@@ -6,11 +6,13 @@ extends CharacterBody2D
 var move_speed = 300
 func _physics_process(_delta: float) -> void:
 	var direction = global_position.direction_to(player.global_position)
+	look_at(player.position)
 	velocity = direction * move_speed
 	move_and_slide()
 	if position.y > player.lower_bound + 100:
 		#Despawn enemy
 		queue_free()
+	
 
 #Take damage
 var health = 3

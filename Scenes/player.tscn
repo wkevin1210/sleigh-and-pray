@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://co5v4v1vt78af"]
+[gd_scene load_steps=20 format=3 uid="uid://co5v4v1vt78af"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_k7o6d"]
 [ext_resource type="Texture2D" uid="uid://dn618878u0iib" path="res://assets/Santa Throw.png" id="2_4n0og"]
 [ext_resource type="Texture2D" uid="uid://cxj5ygumqnsl0" path="res://assets/santa run.png" id="2_vw5qf"]
 [ext_resource type="Texture2D" uid="uid://dbud5uaxne41j" path="res://assets/Santa Grapple.png" id="3_bwodx"]
+[ext_resource type="Script" path="res://Scenes/animator.gd" id="5_rjlqo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iane8"]
 atlas = ExtResource("2_4n0og")
@@ -28,6 +29,10 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_j5uy6"]
 atlas = ExtResource("3_bwodx")
 region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swh2r"]
+atlas = ExtResource("2_vw5qf")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nyy1k"]
 atlas = ExtResource("2_vw5qf")
@@ -90,6 +95,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_swh2r")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_nyy1k")
 }, {
 "duration": 1.0,
@@ -131,8 +144,8 @@ script = ExtResource("1_k7o6d")
 rotation = 1.5708
 scale = Vector2(5.75, 5.75)
 sprite_frames = SubResource("SpriteFrames_jl5j7")
-animation = &"Grapple Throw"
-frame_progress = 0.699557
+animation = &"Attack"
+script = ExtResource("5_rjlqo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9, 1)

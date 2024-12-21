@@ -1,7 +1,25 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddcfoi00wsy62"]
+[gd_scene load_steps=18 format=3 uid="uid://ddcfoi00wsy62"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_aam47"]
 [ext_resource type="Texture2D" uid="uid://cqh0t24f28gqp" path="res://assets/Elf 1.png" id="2_5pu6t"]
+[ext_resource type="Texture2D" uid="uid://tbvprqj2tj88" path="res://assets/Elf 1 Death.png" id="2_vk8c1"]
+[ext_resource type="Texture2D" uid="uid://r1khpq5fnyt7" path="res://assets/Snowfall.png" id="4_psowi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqcym"]
+atlas = ExtResource("2_vk8c1")
+region = Rect2(0, 0, 22, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_612e4"]
+atlas = ExtResource("2_vk8c1")
+region = Rect2(22, 0, 22, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vlmv"]
+atlas = ExtResource("2_vk8c1")
+region = Rect2(44, 0, 22, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5ke0"]
+atlas = ExtResource("2_vk8c1")
+region = Rect2(66, 0, 22, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_etext"]
 atlas = ExtResource("2_5pu6t")
@@ -25,6 +43,23 @@ region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ojscu"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqcym")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_612e4")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_0vlmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5ke0")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_etext")
@@ -55,6 +90,14 @@ animations = [{
 "speed": 11.0
 }]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pahny"]
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 10.0
+initial_velocity_min = 533.34
+initial_velocity_max = 675.56
+gravity = Vector3(0, 0, 0)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_a21n0"]
 radius = 35.5215
 
@@ -71,8 +114,17 @@ script = ExtResource("1_aam47")
 rotation = 1.5708
 scale = Vector2(5.75, 5.75)
 sprite_frames = SubResource("SpriteFrames_ojscu")
+animation = &"Death"
 autoplay = "default"
-frame_progress = 0.837069
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+rotation = 0.000173514
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_pahny")
+texture = ExtResource("4_psowi")
+one_shot = true
+explosiveness = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.1146, 1.1146)

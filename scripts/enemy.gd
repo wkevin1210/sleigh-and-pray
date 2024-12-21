@@ -1,13 +1,23 @@
 extends CharacterBody2D
 
 @onready var player: CharacterBody2D = get_node("/root/Game/Player")
+@onready var animator: AnimatedSprite2D = get_node('AnimatedSprite2D')
+@onready var bouncer: CollisionShape2D = get_node("BounceBox/CollisionShape2D")
+@onready var collider: CollisionShape2D = get_node("CollisionShape2D")
+@onready var snow_splash: GPUParticles2D = get_node("GPUParticles2D")
+var alive = true
 
 #Movement code
 var move_speed = 300
 func _physics_process(_delta: float) -> void:
-	var direction = global_position.direction_to(player.global_position)
-	look_at(player.position)
-	velocity = direction * move_speed
+	if alive:
+		var direction = global_position.direction_to(player.global_position)
+		look_at(player.position)
+		velocity = direction * move_speed
+	if not alive: 
+		velocity = Vector2(0,0)
+		collider.disabled = true
+		bouncer.disabled = true
 	move_and_slide()
 	if position.y > player.lower_bound + 100:
 		#Despawn enemy
@@ -15,11 +25,14 @@ func _physics_process(_delta: float) -> void:
 	
 
 #Take damage
-var health = 3
+var health = 1
 func take_damage():
+	snow_splash.emitting = true
 	health -= 1
 	if health == 0:
-		queue_free()
+		alive = false
+		animator.play("Death")
+		
 
 #Collision code
 var push_strength = 300

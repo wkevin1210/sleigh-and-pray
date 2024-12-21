@@ -5,10 +5,9 @@
 [node name="Background" type="Node2D"]
 
 [node name="BG" type="Parallax2D" parent="."]
-repeat_size = Vector2(0, 640)
+repeat_size = Vector2(0, 1150)
 
 [node name="Sprite2D" type="Sprite2D" parent="BG"]
-scale = Vector2(5.76, 3.24)
-
+scale = Vector2(5.75, 5.75)
 texture = ExtResource("1_8b0aj")
 centered = false

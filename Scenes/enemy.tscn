@@ -1,13 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddcfoi00wsy62"]
+[gd_scene load_steps=5 format=3 uid="uid://ddcfoi00wsy62"]
 
 [ext_resource type="Texture2D" uid="uid://bbslux38xqguj" path="res://assets/FilledCircle.png" id="1_1whpm"]
-[ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_aam47"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_aam47"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a21n0"]
-radius = 38.0526
+radius = 35.5215
 
-[node name="Enemy" type="Area2D" groups=["Enemy"]]
-scale = Vector2(0.240001, 0.240001)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3686f"]
+radius = 41.2252
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+top_level = true
+scale = Vector2(0.707207, 0.707207)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_aam47")
 
 [node name="FilledCircle" type="Sprite2D" parent="."]
@@ -15,6 +21,13 @@ scale = Vector2(0.0762865, 0.0762865)
 texture = ExtResource("1_1whpm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.1146, 1.1146)
 shape = SubResource("CircleShape2D_a21n0")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="BounceBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BounceBox"]
+shape = SubResource("CircleShape2D_3686f")
+debug_color = Color(0.972514, 0, 0.440508, 0.42)
+
+[connection signal="body_entered" from="BounceBox" to="." method="_on_bounce_box_body_entered"]

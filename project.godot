@@ -32,6 +32,7 @@ version_control/autoload_on_startup=true
 
 Enemy="For entities that need to be able to push the player"
 Player="Group for the player"
+Bullet="Fired bullet"
 
 [input]
 

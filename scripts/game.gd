@@ -35,7 +35,6 @@ func spawn_obstacle():
 	
 func spawn_enemy():
 	var enemy = preload("res://Scenes/enemy.tscn").instantiate()
-	print("!")
 	%SpawnPoint.progress_ratio = randf()
 	
 	enemy.global_position = %SpawnPoint.global_position

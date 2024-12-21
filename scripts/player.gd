@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 #Shooting vars
-var shoot_timer = 1.0
-var fire_rate = 1.0
+var shoot_timer = 0.3
+var fire_rate = 0.3
 
 #Define vars for camera movement
 @onready var view = get_viewport_rect().size

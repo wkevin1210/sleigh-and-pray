@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://x3uqphg7caio"]
+[gd_scene load_steps=8 format=3 uid="uid://x3uqphg7caio"]
 
 [ext_resource type="Script" path="res://Scenes/game.gd" id="1_c5ygc"]
 [ext_resource type="PackedScene" uid="uid://du8dyk7a1ot0x" path="res://Scenes/background.tscn" id="1_ut0j4"]
 [ext_resource type="PackedScene" uid="uid://co5v4v1vt78af" path="res://Scenes/player.tscn" id="2_n6qu3"]
 [ext_resource type="Script" path="res://Scenes/spawn_path.gd" id="3_51qkx"]
+[ext_resource type="PackedScene" uid="uid://ddcfoi00wsy62" path="res://Scenes/enemy.tscn" id="4_vqy2q"]
 
 [sub_resource type="Curve2D" id="Curve2D_31iaf"]
 _data = {
@@ -28,9 +29,13 @@ unique_name_in_owner = true
 position = Vector2(-476, -455)
 rotation = -0.0224561
 
+[node name="Enemy" parent="." instance=ExtResource("4_vqy2q")]
+position = Vector2(418, 342)
+
 [node name="Player" parent="." instance=ExtResource("2_n6qu3")]
 unique_name_in_owner = true
 position = Vector2(576, 324)
+scale = Vector2(0.52, 0.52)
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 

@@ -6,6 +6,7 @@
 size = Vector2(116, 118)
 
 [node name="Obstacle" type="StaticBody2D"]
+scale = Vector2(0.493796, 0.493796)
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("1_cr3vd")

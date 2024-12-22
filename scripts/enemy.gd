@@ -35,7 +35,7 @@ func take_damage():
 		
 
 #Collision code
-var push_strength = 300
+var push_strength = 325
 var enemy_push = 0.1
 func _on_bounce_box_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):

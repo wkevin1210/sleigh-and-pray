@@ -63,6 +63,8 @@ unique_name_in_owner = true
 position = Vector2(576, 324)
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
 position = Vector2(44, -1e+07)
@@ -71,6 +73,8 @@ shape = SubResource("RectangleShape2D_xwplh")
 
 [node name="RightWall" type="StaticBody2D" parent="."]
 position = Vector2(1158, 10)
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 position = Vector2(-51, -1e+07)

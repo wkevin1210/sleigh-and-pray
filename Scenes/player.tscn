@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cxj5ygumqnsl0" path="res://assets/santa run.png" id="2_vw5qf"]
 [ext_resource type="Texture2D" uid="uid://dbud5uaxne41j" path="res://assets/Santa Grapple.png" id="3_bwodx"]
 [ext_resource type="Script" path="res://Scenes/animator.gd" id="5_rjlqo"]
-[ext_resource type="PackedScene" uid="uid://i40j05fu7xt6" path="res://Scenes/hook.tscn" id="6_iadei"]
+[ext_resource type="PackedScene" path="res://Scenes/hook.tscn" id="6_iadei"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iane8"]
 atlas = ExtResource("2_4n0og")
@@ -123,20 +123,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b1jgi"]
-radius = 150.589
-height = 331.295
+radius = 165.647
+height = 361.412
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
 position = Vector2(685, 382)
-scale = Vector2(0.6, 0.6)
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_k7o6d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
-scale = Vector2(2.5, 2.5)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_jl5j7")
 animation = &"Attack"
 frame = 3
@@ -144,13 +143,13 @@ frame_progress = 0.373554
 script = ExtResource("5_rjlqo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 5.96046e-08)
+position = Vector2(-3, -1)
 scale = Vector2(0.0664063, 0.0664063)
 shape = SubResource("CapsuleShape2D_b1jgi")
 
 [node name="ShootingPoint" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(13, 7)
+position = Vector2(15, 9)
 
 [node name="Camera" type="Camera2D" parent="."]
 drag_horizontal_enabled = true

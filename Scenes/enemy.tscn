@@ -103,21 +103,20 @@ hue_variation_min = -2.23517e-08
 hue_variation_max = -2.23517e-08
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a21n0"]
-radius = 10.7662
+radius = 11.6634
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3686f"]
-radius = 13.0
+radius = 15.0
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 top_level = true
-scale = Vector2(0.600002, 0.600002)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_aam47")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
-scale = Vector2(2.5, 2.5)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ojscu")
 animation = &"Death"
 autoplay = "default"

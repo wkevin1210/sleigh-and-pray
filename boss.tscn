@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_numqb"]
-size = Vector2(75, 125)
+size = Vector2(85, 135)
 
 [node name="Boss" type="CharacterBody2D"]
 z_index = 4
@@ -50,13 +50,13 @@ collision_mask = 4
 script = ExtResource("1_8i8d2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_xev2s")
 autoplay = "default"
 frame_progress = 0.548924
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 109.5)
+position = Vector2(-0.5, 139.5)
 shape = SubResource("RectangleShape2D_numqb")
 
 [node name="Timer" type="Timer" parent="."]

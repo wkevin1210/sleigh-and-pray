@@ -3,16 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://cwvtesq4e4gdv" path="res://assets/rock.png" id="1_kl04a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btlum"]
-size = Vector2(40.9091, 40.9697)
+size = Vector2(42, 39)
 
 [node name="Obstacle" type="StaticBody2D"]
-scale = Vector2(1.32, 1.32)
 
 [node name="Ice" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.85098)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(3, 3)
 texture = ExtResource("1_kl04a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(9.53674e-07, -1.5)
 shape = SubResource("RectangleShape2D_btlum")

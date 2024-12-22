@@ -1,7 +1,6 @@
 extends Area2D
 
-@onready var sprite : Sprite2D = $Snowball
-
+@onready var sprite : Sprite2D = $Rock
 var travelled = 0
 
 func _physics_process(delta: float) -> void:

@@ -123,8 +123,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b1jgi"]
-radius = 451.763
-height = 903.527
+radius = 150.589
+height = 331.295
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
@@ -136,19 +136,21 @@ script = ExtResource("1_k7o6d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
-scale = Vector2(5.75, 5.75)
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_jl5j7")
-animation = &"Grapple Throw"
+animation = &"Attack"
+frame = 3
+frame_progress = 0.373554
 script = ExtResource("5_rjlqo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-9, 1)
+position = Vector2(-1, 5.96046e-08)
 scale = Vector2(0.0664063, 0.0664063)
 shape = SubResource("CapsuleShape2D_b1jgi")
 
 [node name="ShootingPoint" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(31, 15)
+position = Vector2(13, 7)
 
 [node name="Camera" type="Camera2D" parent="."]
 drag_horizontal_enabled = true

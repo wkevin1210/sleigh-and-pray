@@ -91,18 +91,22 @@ animations = [{
 }]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pahny"]
+lifetime_randomness = 1.0
 particle_flag_disable_z = true
 direction = Vector3(-1, 0, 0)
 spread = 10.0
 initial_velocity_min = 533.34
 initial_velocity_max = 675.56
 gravity = Vector3(0, 0, 0)
+color = Color(0.685733, 3.10443e-06, 5.77569e-07, 1)
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a21n0"]
-radius = 35.5215
+radius = 10.7662
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3686f"]
-radius = 41.2252
+radius = 13.0
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 top_level = true
@@ -113,7 +117,7 @@ script = ExtResource("1_aam47")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
-scale = Vector2(5.75, 5.75)
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_ojscu")
 animation = &"Death"
 autoplay = "default"
@@ -124,16 +128,19 @@ emitting = false
 amount = 40
 process_material = SubResource("ParticleProcessMaterial_pahny")
 texture = ExtResource("4_psowi")
+lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
 scale = Vector2(1.1146, 1.1146)
 shape = SubResource("CircleShape2D_a21n0")
 
 [node name="BounceBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BounceBox"]
+position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_3686f")
 debug_color = Color(0.972514, 0, 0.440508, 0.42)
 

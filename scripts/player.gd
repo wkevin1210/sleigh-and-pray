@@ -15,6 +15,10 @@ const MAXSPEED = 400
 const ACCEL = 300
 const DECEL = 300
 
+#Vars for hook
+var hook_direction
+var hooking = false
+
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
@@ -22,8 +26,13 @@ func _physics_process(delta: float) -> void:
 	if position.y < upper_bound:
 		lower_bound -= upper_bound - position.y
 		upper_bound = position.y
+		
+	look_at(get_global_mouse_position())
 	
 	#Handle sliding movement
+	if hooking:
+		velocity += hook_direction * MAXSPEED
+		hooking = false
 	if direction != Vector2.ZERO:
 		velocity = velocity.move_toward(direction * MAXSPEED, ACCEL * delta)
 	else:
@@ -37,9 +46,7 @@ func _physics_process(delta: float) -> void:
 	#Prevent player from moving backwards
 	if position.y > lower_bound:
 		position.y = lower_bound
-
-	look_at(get_global_mouse_position())
-
+	
 	#Prevent max fire rate or faster fire rate when clicking individually
 	shoot_timer -= delta
 	if Input.is_action_pressed("shoot"):
@@ -57,4 +64,19 @@ func shoot():
 	new_bullet.global_position = %ShootingPoint.global_position
 	new_bullet.global_rotation = %ShootingPoint.global_rotation
 	%ShootingPoint.add_child(new_bullet)
+
+func _on_hook_hooked(hooked_position: Variant) -> void:
 	
+	await get_tree().create_timer($Hook.HOOK_DURATION).timeout
+	var distance = global_position.distance_to(hooked_position)
+	var hook_time = $Hook.MAX_TIME * distance/$Hook.MAX_DIST
+	hooking = true
+	hook_direction = global_position.direction_to(hooked_position)
+	
+	set_collision_layer_value(1, false)
+	set_collision_mask_value(1, false)
+	
+	await get_tree().create_timer(hook_time + 0.5).timeout
+	
+	set_collision_layer_value(1, true)
+	set_collision_mask_value(1, true)

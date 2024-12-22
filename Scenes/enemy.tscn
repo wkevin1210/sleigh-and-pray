@@ -110,6 +110,7 @@ radius = 13.0
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 top_level = true
+scale = Vector2(0.600002, 0.600002)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_aam47")

@@ -1,7 +1,7 @@
 extends Node2D
 
-var obs_spawn_dist = 500
-var obs_last_spawn = 500
+var obs_spawn_dist = 200
+var obs_last_spawn = 200
 
 var enemy_spawn_dist = 800
 var enemy_last_spawn = 0

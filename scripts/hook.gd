@@ -1,9 +1,9 @@
 extends Sprite2D
 
-const HOOK_DURATION = 0.3
-const MAX_DIST = 200.0
-const MAX_TIME = 0.4
+const HOOK_DURATION = 0.1
+const MAX_TIME = 0.15
 @onready var ray_cast: RayCast2D = $RayCast2D
+var max_dist = 100.0
 var distance = 100.0
 
 signal hooked(hooked_position)
@@ -19,13 +19,13 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("grapple"):
 		ray_cast.force_raycast_update()
 		distance = await check_collision()
-		var hook_time = MAX_TIME * distance/MAX_DIST
+		var hook_time = MAX_TIME * distance/max_dist
 		interpolate(distance, hook_time)
 		await get_tree().create_timer(hook_time).timeout
 		reverse_interpolate(hook_time)
 		
 func reverse_interpolate(time):
-	interpolate(0,time)
+	interpolate(0,time - 0.1)
 
 func check_collision():
 	var collision_point: Vector2
@@ -34,5 +34,5 @@ func check_collision():
 		distance = global_position.distance_to(collision_point) * 0.55
 		hooked.emit(collision_point)
 	else:
-		distance = MAX_DIST
+		distance = max_dist
 	return distance

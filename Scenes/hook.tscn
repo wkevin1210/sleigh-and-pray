@@ -5,7 +5,6 @@
 
 [node name="Hook" type="Sprite2D"]
 texture_filter = 1
-texture_repeat = 2
 rotation = -1.5708
 scale = Vector2(3, 3)
 texture = ExtResource("1_7t8ve")
@@ -15,4 +14,4 @@ region_rect = Rect2(0, 0, 8, 0)
 script = ExtResource("2_q1gqf")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 200)
+target_position = Vector2(0, 100)

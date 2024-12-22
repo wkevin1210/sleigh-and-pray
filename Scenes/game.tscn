@@ -10,9 +10,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_31iaf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -476, -455, 0, 0, 0, 0, 459, -476, 0, 0, 0, 0, -29, -433, 0, 0, 0, 0, -476, -455)
+"points": PackedVector2Array(0, 0, 0, 0, -476, -455, 0, 0, 0, 0, 459, -476, 0, 0, 0, 0, -216, -410, 0, 0, 0, 0, 187, -416, 0, 0, 0, 0, -476, -455)
 }
-point_count = 4
+point_count = 5
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lvky6"]
 particle_flag_disable_z = true

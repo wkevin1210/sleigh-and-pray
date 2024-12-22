@@ -17,7 +17,9 @@ const DECEL = 300
 
 #Vars for hook
 var hook_direction
+var look_position
 var hooking = false
+var speed_added = false
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -27,12 +29,14 @@ func _physics_process(delta: float) -> void:
 		lower_bound -= upper_bound - position.y
 		upper_bound = position.y
 		
-	look_at(get_global_mouse_position())
+	if not hooking:
+		look_position = get_global_mouse_position()
+	look_at(look_position)
 	
 	#Handle sliding movement
-	if hooking:
+	if hooking and not speed_added:
 		velocity += hook_direction * MAXSPEED
-		hooking = false
+		speed_added = true
 	if direction != Vector2.ZERO:
 		velocity = velocity.move_toward(direction * MAXSPEED, ACCEL * delta)
 	else:
@@ -69,14 +73,17 @@ func _on_hook_hooked(hooked_position: Variant) -> void:
 	
 	await get_tree().create_timer($Hook.HOOK_DURATION).timeout
 	var distance = global_position.distance_to(hooked_position)
-	var hook_time = $Hook.MAX_TIME * distance/$Hook.MAX_DIST
+	var hook_time = $Hook.MAX_TIME * distance/$Hook.max_dist
 	hooking = true
 	hook_direction = global_position.direction_to(hooked_position)
+	look_position = hooked_position
 	
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
 	
-	await get_tree().create_timer(hook_time + 0.5).timeout
+	await get_tree().create_timer(hook_time + 0.1).timeout
+	hooking = false
+	speed_added = false
 	
 	set_collision_layer_value(1, true)
 	set_collision_mask_value(1, true)

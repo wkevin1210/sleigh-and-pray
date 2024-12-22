@@ -7,7 +7,7 @@
 texture_filter = 1
 texture_repeat = 2
 rotation = -1.5708
-scale = Vector2(5, 5)
+scale = Vector2(3, 3)
 texture = ExtResource("1_7t8ve")
 flip_v = true
 region_enabled = true

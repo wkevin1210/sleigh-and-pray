@@ -1,10 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ca5vbrcdkxsxf"]
+[gd_scene load_steps=5 format=3 uid="uid://i2c4iq1lu2yj"]
 
 [ext_resource type="Texture2D" uid="uid://r1khpq5fnyt7" path="res://assets/Art/Snowfall.png" id="1_3s1h6"]
 
 [sub_resource type="Gradient" id="Gradient_bss05"]
-offsets = PackedFloat32Array(0, 0.291925, 1)
-colors = PackedColorArray(0.74558, 0.74558, 0.74558, 1, 0.291925, 0.291925, 0.291925, 1, 1, 1, 1, 1)
+colors = PackedColorArray(0.74558, 0.74558, 0.74558, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cjbhw"]
 gradient = SubResource("Gradient_bss05")

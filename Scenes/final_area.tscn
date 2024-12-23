@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://b0oa26olyf76m"]
+[gd_scene load_steps=38 format=3 uid="uid://covgjwebxradd"]
 
 [ext_resource type="Texture2D" uid="uid://ygnac6vpeewf" path="res://assets/Art/Final Area/Main.png" id="1_fof3x"]
 [ext_resource type="Script" path="res://scripts/final_area.gd" id="1_q1abb"]
@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dbud5uaxne41j" path="res://assets/Art/Santa Grapple.png" id="6_e4ovh"]
 [ext_resource type="Texture2D" uid="uid://cxj5ygumqnsl0" path="res://assets/Art/santa run.png" id="7_sqv6q"]
 [ext_resource type="Script" path="res://scripts/animated_sprite_2d.gd" id="8_pob46"]
-[ext_resource type="PackedScene" uid="uid://dxcpsrdli1q8v" path="res://Scenes/Talking Heads Hud.tscn" id="10_xfvfa"]
+[ext_resource type="PackedScene" path="res://Scenes/Talking Heads Hud.tscn" id="10_xfvfa"]
+[ext_resource type="PackedScene" uid="uid://df0lh6sj5blq5" path="res://Scenes/transition_screen.tscn" id="11_ormx6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qolq"]
 size = Vector2(592.5, 43)
@@ -292,7 +293,6 @@ position = Vector2(0.5, 10.6667)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rudolph/StaticBody2D"]
 position = Vector2(-9.71986, -4.99789)
 rotation = -0.588248
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_io5b7")
 
 [node name="Rudolph Collider" type="StaticBody2D" parent="Rudolph"]
@@ -352,6 +352,8 @@ speed_scale = 0.5
 visibility_rect = Rect2(-100, -100, 400, 200)
 
 [node name="Control" parent="." instance=ExtResource("10_xfvfa")]
+
+[node name="TransitionScreen" parent="." instance=ExtResource("11_ormx6")]
 
 [connection signal="animation_looped" from="Rudolph/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="body_entered" from="Rudolph/AnimatedSprite2D/DialogueTrigger" to="." method="_on_dialogue_trigger_body_entered"]

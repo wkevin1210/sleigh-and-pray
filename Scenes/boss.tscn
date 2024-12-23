@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d16fu7qdq5pgj"]
+[gd_scene load_steps=11 format=3 uid="uid://ds77gcxom6nth"]
 
 [ext_resource type="Texture2D" uid="uid://bkmuu5ah5pqml" path="res://assets/Art/Sleigh.png" id="1_1gnui"]
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_8i8d2"]

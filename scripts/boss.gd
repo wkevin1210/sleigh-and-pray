@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var distance_to_player = global_position.distance_to(player.global_position)
 var move_speed : float = 100.0
 var slow_speed : float = 50.0
-var HP = 1
+var HP = 10
 var just_hit = false
 var target_x = 0
 signal boss_hit
@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 	elif distance_to_player < -1000:
 		velocity.y = -100
 		
-	print(distance_to_player)
 	move_and_slide()
 	
 

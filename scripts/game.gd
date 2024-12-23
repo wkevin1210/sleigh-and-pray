@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var end_game : PackedScene = preload("res://Scenes/final_area.tscn")
+@onready var transitioner : Area2D = get_node("TransitionArea")
+
 var obs_spawn_dist = 200
 var obs_last_spawn = 200
 
@@ -49,6 +52,9 @@ func spawn_enemy():
 
 func _on_child_exiting_tree(node: Node) -> void:
 	if node.is_in_group("Boss"):
+		transitioner.global_position.y = (%Player.global_position.y - 2000)
+
+		%Music.stream_paused = true
 		game_over = true
 
 func _on_boss_boss_hit() -> void:
@@ -61,3 +67,13 @@ func _on_boss_boss_hit() -> void:
 
 func _on_music_finished() -> void:
 	%Music.play()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player") and game_over:
+		print("crossed")
+		%TransitionScreen.transition()
+		
+
+func _on_transition_screen_transitioned() -> void:
+	get_tree().change_scene_to_packed(end_game)

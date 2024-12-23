@@ -173,10 +173,10 @@ tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 9.5, 20.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": ["Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?"]
+"values": ["Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?", "Don’t do this.", "It didn’t have to end like this."]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -185,10 +185,10 @@ tracks/1/path = NodePath("Right Text/MarginContainer/Right Text:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 5, 13, 13.5, 18.5, 20.5, 21.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["Turn around old man. You can’t stop us. We’re done working for you. Rudolph has shown us the light."]
+"values": ["Turn around old man. You can’t stop us. We’re done working for you. Rudolph has shown us the light.", "We’re finished with looking out for the world. It’s time we started thinking about our own happiness and joy.", "We’re finished with looking out for the world. It’s time we started thinking about our own happiness and joy.", "No more workshops. No more presents. We’re done with Christmas and we’re done with you.", "Go Rudolph! We’ll hold him back!", "Go Rudolph! We’ll hold him back!", "Sorry old man, Christmas is canceled."]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -197,10 +197,10 @@ tracks/2/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 3.5, 5.03333, 10, 13.4667, 13.5, 16.5, 17, 18.5, 20.5, 21.5, 23.5333, 24.5333, 27),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1.04221e-05, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.0]
+"values": [0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -209,10 +209,10 @@ tracks/3/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 5, 8.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 4, 5, 8.5, 9.5, 17, 18.0333, 18.5, 20.5, 21.5, 23.5333, 24.5333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 1.0]
+"values": [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -221,10 +221,10 @@ tracks/4/path = NodePath("Left Text:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 9.5, 17, 18.5, 21.5, 24.5333, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, true, false, true, false, true, false, false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -233,10 +233,10 @@ tracks/5/path = NodePath("Right Text:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 4.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 4.5, 10, 17, 18.5, 21.5, 24.5333, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, false, true, false, true, false, true, false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -245,10 +245,10 @@ tracks/6/path = NodePath("Right Side:animation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(-0.0333333, 0, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 3.5, 10, 13, 13.5, 16.5, 18.5, 20.5, 24.5333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [&"Elf Talking", &"Elf Talking", &"Elf_Quiet"]
+"values": [&"Elf Talking", &"Elf_Quiet", &"Elf Talking", &"Elf_Quiet", &"Elf Talking", &"Elf_Quiet", &"Elf Talking", &"Elf_Quiet", &"Elf Talking"]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -257,10 +257,10 @@ tracks/7/path = NodePath("Left Side:animation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 8.5, 17, 18.0333, 21.5, 23.5333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [&"Santa_Quiet", &"Santa Talking"]
+"values": [&"Santa_Quiet", &"Santa Talking", &"Santa_Quiet", &"Santa Talking", &"Santa_Quiet", &"Santa Talking", &"Santa_Quiet"]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -269,10 +269,10 @@ tracks/8/path = NodePath("Left Side:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 28),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -281,10 +281,10 @@ tracks/9/path = NodePath("Right Side:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 28),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_wd0th"]
@@ -745,7 +745,7 @@ autoplay = "Pre-Game"
 [node name="Left Text" type="MarginContainer" parent="."]
 offset_left = 226.0
 offset_top = 546.0
-offset_right = 250.0
+offset_right = 626.0
 offset_bottom = 587.0
 
 [node name="Panel" type="Panel" parent="Left Text"]
@@ -773,7 +773,7 @@ script = ExtResource("5_pkixt")
 [node name="Right Text" type="MarginContainer" parent="."]
 offset_left = 532.0
 offset_top = 546.0
-offset_right = 556.0
+offset_right = 932.0
 offset_bottom = 587.0
 
 [node name="Panel" type="Panel" parent="Right Text"]

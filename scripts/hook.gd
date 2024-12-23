@@ -3,7 +3,7 @@ extends Sprite2D
 const HOOK_DURATION = 0.1
 const MAX_TIME = 0.15
 @onready var ray_cast: RayCast2D = $RayCast2D
-var max_dist = 100.0
+var max_dist = 150.0
 var distance = 100.0
 
 signal hooked(hooked_position)

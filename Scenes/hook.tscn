@@ -14,4 +14,4 @@ region_rect = Rect2(0, 0, 8, 0)
 script = ExtResource("2_q1gqf")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 100)
+target_position = Vector2(0, 150)

@@ -39,6 +39,7 @@ func _physics_process(delta: float) -> void:
 		speed_added = true
 	if direction != Vector2.ZERO:
 		velocity = velocity.move_toward(direction * MAXSPEED, ACCEL * delta)
+
 	else:
 		if position.y == lower_bound:
 		#Allow player to instantly accelerate if at border

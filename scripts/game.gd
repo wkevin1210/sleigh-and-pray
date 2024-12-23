@@ -7,7 +7,11 @@ var enemy_spawn_dist = 800
 var enemy_last_spawn = 0
 var enemy_spawn_count = 2
 
+func _ready() -> void:
+	%Music.play()
+
 func _physics_process(delta: float) -> void:
+	
 	if obs_last_spawn >= obs_spawn_dist:
 		spawn_obstacle()
 		obs_last_spawn = 0
@@ -40,3 +44,14 @@ func spawn_enemy():
 	enemy.global_position = %SpawnPoint.global_position
 	
 	add_child(enemy)
+
+func _on_boss_boss_hit() -> void:
+	obs_spawn_dist -= 5
+	
+	if $Boss.HP <= 4:
+		if enemy_spawn_count < 4:
+			enemy_spawn_count += 1
+
+
+func _on_music_finished() -> void:
+	%Music.play()

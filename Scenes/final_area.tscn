@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dbud5uaxne41j" path="res://assets/Art/Santa Grapple.png" id="6_e4ovh"]
 [ext_resource type="Texture2D" uid="uid://cxj5ygumqnsl0" path="res://assets/Art/santa run.png" id="7_sqv6q"]
 [ext_resource type="Script" path="res://scripts/animated_sprite_2d.gd" id="8_pob46"]
-[ext_resource type="PackedScene" path="res://Scenes/Talking Heads Hud.tscn" id="10_xfvfa"]
+[ext_resource type="PackedScene" uid="uid://briletg34gtu4" path="res://Scenes/Talking Heads Hud.tscn" id="10_xfvfa"]
 [ext_resource type="PackedScene" uid="uid://df0lh6sj5blq5" path="res://Scenes/transition_screen.tscn" id="11_ormx6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qolq"]

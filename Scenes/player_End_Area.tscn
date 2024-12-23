@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bstwqmsrb4ue"]
+[gd_scene load_steps=19 format=3 uid="uid://bw7c38brk8cpj"]
 
 [ext_resource type="Script" path="res://scripts/player_End_Area.gd" id="1_fojyt"]
 [ext_resource type="Texture2D" uid="uid://dn618878u0iib" path="res://assets/Art/Santa Throw.png" id="1_m2c0j"]

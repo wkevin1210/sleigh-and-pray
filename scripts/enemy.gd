@@ -8,7 +8,7 @@ extends CharacterBody2D
 var alive = true
 
 #Movement code
-var move_speed = 100
+var move_speed = 200
 func _physics_process(_delta: float) -> void:
 	if alive:
 		var direction = global_position.direction_to(player.global_position)

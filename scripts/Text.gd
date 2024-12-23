@@ -1,3 +1,5 @@
+@tool
+
 extends Label
 
 var width_max: int = 400

@@ -163,8 +163,8 @@ _data = {
 "RESET": SubResource("Animation_owmja")
 }
 
-[sub_resource type="Animation" id="Animation_rw8kg"]
-resource_name = "Pre-Game"
+[sub_resource type="Animation" id="Animation_q1cq7"]
+resource_name = "End_game"
 length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -173,10 +173,10 @@ tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 9.5, 20.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?", "Don’t do this.", "It didn’t have to end like this."]
+"values": ["Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -185,7 +185,255 @@ tracks/1/path = NodePath("Right Text/MarginContainer/Right Text:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5, 13, 13.5, 18.5, 20.5, 21.5),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Turn around old man. You can’t stop us. We’re done working for you. Rudolph has shown us the light."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Left Text:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Right Text:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Right Side:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(-0.0333333, 0, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"Elf Talking", &"Elf Talking", &"Elf_Quiet"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Left Side:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Santa_Quiet", &"Santa Talking"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Left Side:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Right Side:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_18763"]
+resource_name = "Fight"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Text/MarginContainer/Right Text:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Turn around old man. You can’t stop us. We’re done working for you. Rudolph has shown us the light."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Left Text:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Right Text:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Right Side:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(-0.0333333, 0, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"Elf Talking", &"Elf Talking", &"Elf_Quiet"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Left Side:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Santa_Quiet", &"Santa Talking"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Left Side:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Right Side:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_rw8kg"]
+resource_name = "Pre-Game"
+length = 36.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9.75, 23.4667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?", "Don’t do this.", "It didn’t have to end this way."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Text/MarginContainer/Right Text:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5, 13, 14.0667, 20.4833, 23.4667, 24.4667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["Turn around old man. You can’t stop us. We’re done working for you. Rudolph has shown us the light.", "We’re finished with looking out for the world. It’s time we started thinking about our own happiness and joy.", "We’re finished with looking out for the world. It’s time we started thinking about our own happiness and joy.", "No more workshops. No more presents. We’re done with Christmas and we’re done with you.", "Go Rudolph! We’ll hold him back!", "Go Rudolph! We’ll hold him back!", "Sorry old man, Christmas is canceled."]
@@ -197,10 +445,10 @@ tracks/2/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3.5, 5.03333, 10, 13.4667, 13.5, 16.5, 17, 18.5, 20.5, 21.5, 23.5333, 24.5333, 27),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1.04221e-05, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3.5, 5.03333, 10, 13, 14, 14.0667, 17, 18, 20.4833, 23.4667, 24.4667, 26.5333, 27.5, 29.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0]
+"values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -209,7 +457,7 @@ tracks/3/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 4, 5, 8.5, 9.5, 17, 18.0333, 18.5, 20.5, 21.5, 23.5333, 24.5333),
+"times": PackedFloat32Array(0, 4, 5, 8.5, 9.75, 18.2667, 19.5166, 20.4833, 23.4667, 24.7167, 26.5333, 27.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0]
@@ -221,7 +469,7 @@ tracks/4/path = NodePath("Left Text:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 5, 9.5, 17, 18.5, 21.5, 24.5333, 28),
+"times": PackedFloat32Array(0, 5, 9.75, 18.2667, 20.4833, 24.7167, 27.5, 32.2833),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [false, true, false, true, false, true, false, false]
@@ -233,7 +481,7 @@ tracks/5/path = NodePath("Right Text:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 4.5, 10, 17, 18.5, 21.5, 24.5333, 28),
+"times": PackedFloat32Array(0, 4.75, 10, 18.0167, 20.7333, 24.4667, 27.75, 32.2833),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false, true, false, true, false]
@@ -245,7 +493,7 @@ tracks/6/path = NodePath("Right Side:animation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 3.5, 10, 13, 13.5, 16.5, 18.5, 20.5, 24.5333),
+"times": PackedFloat32Array(0, 3.5, 10, 13, 14, 17, 20.7333, 23.7167, 27.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [&"Elf Talking", &"Elf_Quiet", &"Elf Talking", &"Elf_Quiet", &"Elf Talking", &"Elf_Quiet", &"Elf Talking", &"Elf_Quiet", &"Elf Talking"]
@@ -257,7 +505,7 @@ tracks/7/path = NodePath("Left Side:animation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 5, 8.5, 17, 18.0333, 21.5, 23.5333),
+"times": PackedFloat32Array(0, 5, 8.5, 18, 19.5166, 24.7167, 26.7833),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [&"Santa_Quiet", &"Santa Talking", &"Santa_Quiet", &"Santa Talking", &"Santa_Quiet", &"Santa Talking", &"Santa_Quiet"]
@@ -269,7 +517,7 @@ tracks/8/path = NodePath("Left Side:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 28),
+"times": PackedFloat32Array(0, 32.2833),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -281,7 +529,7 @@ tracks/9/path = NodePath("Right Side:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 28),
+"times": PackedFloat32Array(0, 32.2833),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -438,254 +686,6 @@ tracks/1/keys = {
 "values": [false, false]
 }
 
-[sub_resource type="Animation" id="Animation_18763"]
-resource_name = "Fight"
-length = 30.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Right Text/MarginContainer/Right Text:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Turn around old man. You can’t stop us. We’re done working for you. Rudolph has shown us the light."]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 5, 8.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Left Text:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Right Text:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 4.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Right Side:animation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(-0.0333333, 0, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [&"Elf Talking", &"Elf Talking", &"Elf_Quiet"]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Left Side:animation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"Santa_Quiet", &"Santa Talking"]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Left Side:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Right Side:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_q1cq7"]
-resource_name = "End_game"
-length = 30.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Right Text/MarginContainer/Right Text:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Turn around old man. You can’t stop us. We’re done working for you. Rudolph has shown us the light."]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 5, 8.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 1.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Left Text:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Right Text:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 4.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Right Side:animation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(-0.0333333, 0, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [&"Elf Talking", &"Elf Talking", &"Elf_Quiet"]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Left Side:animation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"Santa_Quiet", &"Santa Talking"]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Left Side:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Right Side:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ukn4b"]
 _data = {
 "End_game": SubResource("Animation_q1cq7"),
@@ -761,11 +761,13 @@ theme_override_constants/margin_bottom = 12
 
 [node name="Left Text" type="Label" parent="Left Text/MarginContainer"]
 z_index = 5
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?"
 label_settings = SubResource("LabelSettings_73bwq")
+autowrap_mode = 3
 visible_characters = 0
 visible_ratio = 0.0
 script = ExtResource("5_pkixt")
@@ -789,11 +791,13 @@ theme_override_constants/margin_bottom = 12
 
 [node name="Right Text" type="Label" parent="Right Text/MarginContainer"]
 z_index = 5
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "*cough* We… I… was so close... *cough*... I just wanted… to be free…"
 label_settings = SubResource("LabelSettings_73bwq")
+autowrap_mode = 3
 visible_characters = 0
 visible_ratio = 0.0
 script = ExtResource("5_pkixt")

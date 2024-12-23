@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://covgjwebxradd"]
+[gd_scene load_steps=43 format=3 uid="uid://covgjwebxradd"]
 
 [ext_resource type="Texture2D" uid="uid://ygnac6vpeewf" path="res://assets/Art/Final Area/Main.png" id="1_fof3x"]
 [ext_resource type="Script" path="res://scripts/final_area.gd" id="1_q1abb"]
@@ -14,6 +14,32 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qolq"]
 size = Vector2(592.5, 43)
+
+[sub_resource type="Gradient" id="Gradient_5viwf"]
+offsets = PackedFloat32Array(0, 0.492447, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.453172, 0.453172, 0.453172, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p5yae"]
+gradient = SubResource("Gradient_5viwf")
+
+[sub_resource type="Gradient" id="Gradient_gs543"]
+colors = PackedColorArray(0.347318, 0.452264, 0.480507, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tl8v4"]
+gradient = SubResource("Gradient_gs543")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7jw0t"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 38.54
+angle_min = 1.07288e-05
+angle_max = 10.9
+direction = Vector3(1, -1, 0)
+spread = 44.067
+initial_velocity_max = 20.26
+gravity = Vector3(0, -68, 0)
+color_ramp = SubResource("GradientTexture1D_tl8v4")
+color_initial_ramp = SubResource("GradientTexture1D_p5yae")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egr4q"]
 atlas = ExtResource("2_clg41")
@@ -262,6 +288,13 @@ rotation = -1.5708
 position = Vector2(299.25, 27.5)
 shape = SubResource("RectangleShape2D_3qolq")
 
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+position = Vector2(60, 54)
+amount = 650
+process_material = SubResource("ParticleProcessMaterial_7jw0t")
+texture = ExtResource("4_3quns")
+lifetime = 41.19
+
 [node name="Rudolph" type="Node2D" parent="."]
 position = Vector2(112.5, 105)
 scale = Vector2(3, 3)
@@ -350,6 +383,9 @@ lifetime = 6.0
 preprocess = 215.7
 speed_scale = 0.5
 visibility_rect = Rect2(-100, -100, 400, 200)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../GPUParticles2D2")
 
 [node name="Control" parent="." instance=ExtResource("10_xfvfa")]
 

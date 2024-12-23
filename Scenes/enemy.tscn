@@ -1,9 +1,9 @@
 [gd_scene load_steps=18 format=3 uid="uid://ddcfoi00wsy62"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_aam47"]
-[ext_resource type="Texture2D" uid="uid://cqh0t24f28gqp" path="res://assets/Elf 1.png" id="2_5pu6t"]
-[ext_resource type="Texture2D" uid="uid://tbvprqj2tj88" path="res://assets/Elf 1 Death.png" id="2_vk8c1"]
-[ext_resource type="Texture2D" uid="uid://r1khpq5fnyt7" path="res://assets/Snowfall.png" id="4_psowi"]
+[ext_resource type="Texture2D" uid="uid://cqh0t24f28gqp" path="res://assets/Art/Elf 1.png" id="2_5pu6t"]
+[ext_resource type="Texture2D" uid="uid://tbvprqj2tj88" path="res://assets/Art/Elf 1 Death.png" id="2_vk8c1"]
+[ext_resource type="Texture2D" uid="uid://r1khpq5fnyt7" path="res://assets/Art/Snowfall.png" id="4_psowi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aqcym"]
 atlas = ExtResource("2_vk8c1")

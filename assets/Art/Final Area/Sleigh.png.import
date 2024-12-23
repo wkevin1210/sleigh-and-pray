@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b88dkrx4rsnt5"
-path="res://.godot/imported/Rudolph Smack.png-f670dcd82591889d9d1415b931d11d1b.ctex"
+uid="uid://certiax2ae7i4"
+path="res://.godot/imported/Sleigh.png-df5074f68de6e7dba928c78b7d338a15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Rudolph Smack.png"
-dest_files=["res://.godot/imported/Rudolph Smack.png-f670dcd82591889d9d1415b931d11d1b.ctex"]
+source_file="res://assets/Art/Final Area/Sleigh.png"
+dest_files=["res://.godot/imported/Sleigh.png-df5074f68de6e7dba928c78b7d338a15.ctex"]
 
 [params]
 

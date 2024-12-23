@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di43ecbcav5i7"
-path="res://.godot/imported/Ice.png-0d39f972dc978b52d2dcd9585db12ebc.ctex"
+uid="uid://dn154s8kph4di"
+path="res://.godot/imported/Dying Rudolph.png-1cc475fbf06769a18096261926fc0051.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Ice.png"
-dest_files=["res://.godot/imported/Ice.png-0d39f972dc978b52d2dcd9585db12ebc.ctex"]
+source_file="res://assets/Art/Final Area/Dying Rudolph.png"
+dest_files=["res://.godot/imported/Dying Rudolph.png-1cc475fbf06769a18096261926fc0051.ctex"]
 
 [params]
 

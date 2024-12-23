@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cck8h07vewuvl"
-path="res://.godot/imported/cane.png-aec08a1c316fe3b582b971c749a752f0.ctex"
+uid="uid://cvby4k7b64k4a"
+path="res://.godot/imported/Elf Talking.png-fbbdc6236eeffebc922f8638b96c4799.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cane.png"
-dest_files=["res://.godot/imported/cane.png-aec08a1c316fe3b582b971c749a752f0.ctex"]
+source_file="res://assets/Art/Talking Heads/Elf Talking.png"
+dest_files=["res://.godot/imported/Elf Talking.png-fbbdc6236eeffebc922f8638b96c4799.ctex"]
 
 [params]
 

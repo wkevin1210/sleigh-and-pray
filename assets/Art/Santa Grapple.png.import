@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw0miats0ymgw"
-path="res://.godot/imported/Circle.png-aedb8aa3cca412d449c1aad3b266a840.ctex"
+uid="uid://dbud5uaxne41j"
+path="res://.godot/imported/Santa Grapple.png-1aea1a49e711f318e46e47eaf5943247.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Circle.png"
-dest_files=["res://.godot/imported/Circle.png-aedb8aa3cca412d449c1aad3b266a840.ctex"]
+source_file="res://assets/Art/Santa Grapple.png"
+dest_files=["res://.godot/imported/Santa Grapple.png-1aea1a49e711f318e46e47eaf5943247.ctex"]
 
 [params]
 

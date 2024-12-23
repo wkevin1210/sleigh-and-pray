@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp8725tgjhi4q"
-path="res://.godot/imported/Snow.png-10bd4e558b0640a986ac69fd027ec2ef.ctex"
+uid="uid://bfc68jyijo8bl"
+path="res://.godot/imported/Rudolph talking.png-4d8df01b02d1fb3ecdfba43e05001436.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Snow.png"
-dest_files=["res://.godot/imported/Snow.png-10bd4e558b0640a986ac69fd027ec2ef.ctex"]
+source_file="res://assets/Art/Talking Heads/Rudolph talking.png"
+dest_files=["res://.godot/imported/Rudolph talking.png-4d8df01b02d1fb3ecdfba43e05001436.ctex"]
 
 [params]
 

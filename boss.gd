@@ -4,9 +4,10 @@ extends CharacterBody2D
 @onready var distance_to_player = global_position.distance_to(player.global_position)
 var move_speed : float = 100.0
 var slow_speed : float = 50.0
-var HP = 10
+var HP = 1
 var just_hit = false
 var target_x = 0
+
 
 func _ready() -> void:
 	velocity.y = -400
@@ -26,6 +27,8 @@ func _process(delta: float) -> void:
 			velocity.y += slow_speed * delta
 	elif distance_to_player < -1000:
 		velocity.y = -100
+		
+	print(distance_to_player)
 	move_and_slide()
 	
 
@@ -47,8 +50,8 @@ func take_damage():
 			just_hit = false
 		elif HP <= 0:
 			velocity.y = -575
-			if distance_to_player < -1000:
-				queue_free()
+			await get_tree().create_timer(2).timeout
+			queue_free()
 
 
 func _on_timer_timeout() -> void:

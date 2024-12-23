@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://du8dyk7a1ot0x" path="res://Scenes/background.tscn" id="1_ut0j4"]
 [ext_resource type="PackedScene" uid="uid://co5v4v1vt78af" path="res://Scenes/player.tscn" id="2_n6qu3"]
 [ext_resource type="Script" path="res://scripts/spawn_path.gd" id="3_51qkx"]
-[ext_resource type="Texture2D" uid="uid://r1khpq5fnyt7" path="res://assets/Snowfall.png" id="4_ddt26"]
+[ext_resource type="Texture2D" uid="uid://r1khpq5fnyt7" path="res://assets/Art/Snowfall.png" id="4_ddt26"]
 [ext_resource type="PackedScene" uid="uid://ddcfoi00wsy62" path="res://Scenes/enemy.tscn" id="4_vqy2q"]
 [ext_resource type="PackedScene" uid="uid://d16fu7qdq5pgj" path="res://boss.tscn" id="7_m2h8r"]
 
@@ -84,3 +84,5 @@ shape = SubResource("RectangleShape2D_xwplh")
 
 [node name="Boss" parent="." instance=ExtResource("7_m2h8r")]
 position = Vector2(542, -569)
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

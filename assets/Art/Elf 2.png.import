@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tbvprqj2tj88"
-path="res://.godot/imported/Elf 1 Death.png-5143d9069514cd567e5cda1f0800a690.ctex"
+uid="uid://cr7usi15nqbbw"
+path="res://.godot/imported/Elf 2.png-bd8d0b661a2cafee319f6e40b3ccb49b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Elf 1 Death.png"
-dest_files=["res://.godot/imported/Elf 1 Death.png-5143d9069514cd567e5cda1f0800a690.ctex"]
+source_file="res://assets/Art/Elf 2.png"
+dest_files=["res://.godot/imported/Elf 2.png-bd8d0b661a2cafee319f6e40b3ccb49b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxj5ygumqnsl0"
-path="res://.godot/imported/santa run.png-9700fe9ab12470cdf74f63e6c0fb99bc.ctex"
+uid="uid://bkmuu5ah5pqml"
+path="res://.godot/imported/Sleigh.png-c8153e6ba36d2070631e835e97303f48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/santa run.png"
-dest_files=["res://.godot/imported/santa run.png-9700fe9ab12470cdf74f63e6c0fb99bc.ctex"]
+source_file="res://assets/Art/Sleigh.png"
+dest_files=["res://.godot/imported/Sleigh.png-c8153e6ba36d2070631e835e97303f48.ctex"]
 
 [params]
 

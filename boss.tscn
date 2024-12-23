@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://d16fu7qdq5pgj"]
 
-[ext_resource type="Texture2D" uid="uid://bkmuu5ah5pqml" path="res://assets/Sleigh.png" id="1_1gnui"]
+[ext_resource type="Texture2D" uid="uid://bkmuu5ah5pqml" path="res://assets/Art/Sleigh.png" id="1_1gnui"]
 [ext_resource type="Script" path="res://boss.gd" id="1_8i8d2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmfkh"]
@@ -42,7 +42,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_numqb"]
 size = Vector2(85, 135)
 
-[node name="Boss" type="CharacterBody2D"]
+[node name="Boss" type="CharacterBody2D" groups=["Boss"]]
 z_index = 4
 texture_filter = 1
 collision_layer = 4

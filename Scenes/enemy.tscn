@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://ddcfoi00wsy62"]
+[gd_scene load_steps=19 format=3 uid="uid://ddcfoi00wsy62"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_aam47"]
 [ext_resource type="Texture2D" uid="uid://cqh0t24f28gqp" path="res://assets/Art/Elf 1.png" id="2_5pu6t"]
 [ext_resource type="Texture2D" uid="uid://tbvprqj2tj88" path="res://assets/Art/Elf 1 Death.png" id="2_vk8c1"]
 [ext_resource type="Texture2D" uid="uid://r1khpq5fnyt7" path="res://assets/Art/Snowfall.png" id="4_psowi"]
+[ext_resource type="AudioStream" uid="uid://c6l26s05yfosq" path="res://assets/Sounds/enemy_hit.wav" id="5_vs1d8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aqcym"]
 atlas = ExtResource("2_vk8c1")
@@ -142,5 +143,9 @@ shape = SubResource("CircleShape2D_a21n0")
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_3686f")
 debug_color = Color(0.972514, 0, 0.440508, 0.42)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_vs1d8")
+bus = &"SFX"
 
 [connection signal="body_entered" from="BounceBox" to="." method="_on_bounce_box_body_entered"]

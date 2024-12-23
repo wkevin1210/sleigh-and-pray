@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqh0t24f28gqp"
-path="res://.godot/imported/Elf 1.png-68e8248306a89f0c4247e1bb01ea1baa.ctex"
+uid="uid://r1khpq5fnyt7"
+path="res://.godot/imported/Snowfall.png-53a97e27f8542d8ae7b9e4e6012b4652.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Elf 1.png"
-dest_files=["res://.godot/imported/Elf 1.png-68e8248306a89f0c4247e1bb01ea1baa.ctex"]
+source_file="res://assets/Art/Snowfall.png"
+dest_files=["res://.godot/imported/Snowfall.png-53a97e27f8542d8ae7b9e4e6012b4652.ctex"]
 
 [params]
 

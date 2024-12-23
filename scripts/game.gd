@@ -7,12 +7,13 @@ var enemy_spawn_dist = 800
 var enemy_last_spawn = 0
 var enemy_spawn_count = 2
 
+var game_over = false
+
 func _ready() -> void:
 	%Music.play()
 
 func _physics_process(delta: float) -> void:
-	
-	if obs_last_spawn >= obs_spawn_dist:
+	if obs_last_spawn >= obs_spawn_dist and not game_over:
 		spawn_obstacle()
 		obs_last_spawn = 0
 	else:
@@ -20,7 +21,7 @@ func _physics_process(delta: float) -> void:
 			#Spawn only if player is moving the viewport forwards
 			obs_last_spawn += abs(%Player.velocity.y * delta)
 			
-	if enemy_last_spawn >= enemy_spawn_dist:
+	if enemy_last_spawn >= enemy_spawn_dist and not game_over:
 		for enemy_spawn in range(enemy_spawn_count):
 			spawn_enemy()
 			enemy_last_spawn = 0
@@ -44,6 +45,11 @@ func spawn_enemy():
 	enemy.global_position = %SpawnPoint.global_position
 	
 	add_child(enemy)
+
+
+func _on_child_exiting_tree(node: Node) -> void:
+	if node.is_in_group("Boss"):
+		game_over = true
 
 func _on_boss_boss_hit() -> void:
 	obs_spawn_dist -= 5

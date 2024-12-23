@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn618878u0iib"
-path="res://.godot/imported/Santa Throw.png-45115728680672b76843f2ae2321590d.ctex"
+uid="uid://tbvprqj2tj88"
+path="res://.godot/imported/Elf 1 Death.png-6e20dc4482eb4600d43bf3e3519250dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Santa Throw.png"
-dest_files=["res://.godot/imported/Santa Throw.png-45115728680672b76843f2ae2321590d.ctex"]
+source_file="res://assets/Art/Elf 1 Death.png"
+dest_files=["res://.godot/imported/Elf 1 Death.png-6e20dc4482eb4600d43bf3e3519250dd.ctex"]
 
 [params]
 

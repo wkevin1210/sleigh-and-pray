@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j6nr2b83f2qj"
-path="res://.godot/imported/Snowball.png-e12d79b8715327ce3099809da0181178.ctex"
+uid="uid://cxj5ygumqnsl0"
+path="res://.godot/imported/santa run.png-da0b4acb724bce6dad2a978327abab29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Snowball.png"
-dest_files=["res://.godot/imported/Snowball.png-e12d79b8715327ce3099809da0181178.ctex"]
+source_file="res://assets/Art/santa run.png"
+dest_files=["res://.godot/imported/santa run.png-da0b4acb724bce6dad2a978327abab29.ctex"]
 
 [params]
 

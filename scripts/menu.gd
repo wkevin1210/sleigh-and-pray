@@ -26,12 +26,14 @@ func _on_credits_pressed() -> void:
 	$MenuClick.play()
 	$MainMenu.hide()
 	$Title.hide()
+	$Controls.hide()
 	$CreditsText.show()
 	$Back.show()
 	
 func _on_back_pressed() -> void:
 	$MenuClick.play()
 	$CreditsText.hide()
+	$Controls.show()
 	$Title.show()
 	$Back.hide()
 	$MainMenu.show()

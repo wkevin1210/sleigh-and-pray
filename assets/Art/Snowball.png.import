@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbslux38xqguj"
-path="res://.godot/imported/FilledCircle.png-787d6ed83a73d07369334de50aefc2df.ctex"
+uid="uid://j6nr2b83f2qj"
+path="res://.godot/imported/Snowball.png-ea7eff843c9546770e96db6f7211520a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FilledCircle.png"
-dest_files=["res://.godot/imported/FilledCircle.png-787d6ed83a73d07369334de50aefc2df.ctex"]
+source_file="res://assets/Art/Snowball.png"
+dest_files=["res://.godot/imported/Snowball.png-ea7eff843c9546770e96db6f7211520a.ctex"]
 
 [params]
 

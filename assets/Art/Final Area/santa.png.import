@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r1khpq5fnyt7"
-path="res://.godot/imported/Snowfall.png-2d867962689275d268a8a42afd3c2997.ctex"
+uid="uid://clhbsp67ht7ql"
+path="res://.godot/imported/santa.png-2a531ae41d92511223c181d395c9bb15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Snowfall.png"
-dest_files=["res://.godot/imported/Snowfall.png-2d867962689275d268a8a42afd3c2997.ctex"]
+source_file="res://assets/Art/Final Area/santa.png"
+dest_files=["res://.godot/imported/santa.png-2a531ae41d92511223c181d395c9bb15.ctex"]
 
 [params]
 

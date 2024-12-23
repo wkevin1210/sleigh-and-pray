@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkmuu5ah5pqml"
-path="res://.godot/imported/Sleigh.png-c91f5c27c5ebb6d4eb86d795f2deab0e.ctex"
+uid="uid://cqh0t24f28gqp"
+path="res://.godot/imported/Elf 1.png-9bd0d1a42d262fa43c970edd52299109.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sleigh.png"
-dest_files=["res://.godot/imported/Sleigh.png-c91f5c27c5ebb6d4eb86d795f2deab0e.ctex"]
+source_file="res://assets/Art/Elf 1.png"
+dest_files=["res://.godot/imported/Elf 1.png-9bd0d1a42d262fa43c970edd52299109.ctex"]
 
 [params]
 

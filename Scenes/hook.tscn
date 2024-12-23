@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://i40j05fu7xt6"]
 
-[ext_resource type="Texture2D" uid="uid://cck8h07vewuvl" path="res://assets/cane.png" id="1_7t8ve"]
+[ext_resource type="Texture2D" uid="uid://cck8h07vewuvl" path="res://assets/Art/cane.png" id="1_7t8ve"]
 [ext_resource type="Script" path="res://scripts/hook.gd" id="2_q1gqf"]
 
 [node name="Hook" type="Sprite2D"]

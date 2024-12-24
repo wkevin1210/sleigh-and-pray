@@ -72,6 +72,14 @@ preprocess = 215.7
 speed_scale = 0.5
 visibility_rect = Rect2(-100, -100, 400, 200)
 
+[node name="Music" type="AudioStreamPlayer2D" parent="SpawnPath"]
+unique_name_in_owner = true
+process_mode = 3
+position = Vector2(-576, -324)
+stream = ExtResource("8_e7cbh")
+autoplay = true
+bus = &"Music"
+
 [node name="Enemy" parent="." instance=ExtResource("4_vqy2q")]
 position = Vector2(641, 155)
 
@@ -81,13 +89,6 @@ position = Vector2(493, 160)
 [node name="Player" parent="." instance=ExtResource("2_n6qu3")]
 unique_name_in_owner = true
 position = Vector2(576, 324)
-
-[node name="Music" type="AudioStreamPlayer2D" parent="Player"]
-unique_name_in_owner = true
-position = Vector2(-576, -324)
-stream = ExtResource("8_e7cbh")
-autoplay = true
-bus = &"Music"
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 collision_layer = 5
@@ -112,9 +113,17 @@ shape = SubResource("RectangleShape2D_xwplh")
 position = Vector2(569, 5)
 
 [node name="Control" parent="." instance=ExtResource("10_bcnws")]
+process_mode = 3
+
+[node name="CutSceneTimer" type="Timer" parent="."]
+process_mode = 2
+wait_time = 27.0
+one_shot = true
+autostart = true
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="transitioned" from="Reset/TransitionScreen" to="." method="_on_transition_screen_transitioned"]
 [connection signal="body_entered" from="TransitionArea" to="." method="_on_area_2d_body_entered"]
-[connection signal="finished" from="Player/Music" to="." method="_on_music_finished"]
+[connection signal="finished" from="SpawnPath/Music" to="." method="_on_music_finished"]
 [connection signal="boss_hit" from="Boss" to="." method="_on_boss_boss_hit"]
+[connection signal="timeout" from="CutSceneTimer" to="." method="_on_cut_scene_timer_timeout"]

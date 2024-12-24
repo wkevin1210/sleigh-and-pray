@@ -1,49 +1,45 @@
-[gd_scene load_steps=36 format=3 uid="uid://briletg34gtu4"]
+[gd_scene load_steps=32 format=3 uid="uid://dcfgvtp43tdmc"]
 
-[ext_resource type="Texture2D" uid="uid://b0rst5lf4ufci" path="res://assets/Art/Talking Heads/Santa Talking.png" id="1_nmfna"]
-[ext_resource type="Texture2D" uid="uid://bfc68jyijo8bl" path="res://assets/Art/Talking Heads/Rudolph talking.png" id="2_rxk20"]
-[ext_resource type="Texture2D" uid="uid://cvby4k7b64k4a" path="res://assets/Art/Talking Heads/Elf Talking.png" id="3_l22cj"]
-[ext_resource type="FontFile" uid="uid://xnkktihrvv7a" path="res://assets/upheavtt.ttf" id="4_0utwy"]
-[ext_resource type="Animation" path="res://assets/Animations/End_game.res" id="4_m30rr"]
-[ext_resource type="Animation" path="res://assets/Animations/End_game_Enter.res" id="5_fdy5k"]
-[ext_resource type="Script" path="res://scripts/Text.gd" id="5_pkixt"]
-[ext_resource type="Animation" path="res://assets/Animations/Fight.res" id="6_x8v4b"]
-[ext_resource type="Animation" path="res://assets/Animations/Pre-Game.res" id="7_rxn1t"]
+[ext_resource type="Texture2D" uid="uid://cvby4k7b64k4a" path="res://assets/Art/Talking Heads/Elf Talking.png" id="1_hx4qw"]
+[ext_resource type="Texture2D" uid="uid://bfc68jyijo8bl" path="res://assets/Art/Talking Heads/Rudolph talking.png" id="2_cowg8"]
+[ext_resource type="Texture2D" uid="uid://b0rst5lf4ufci" path="res://assets/Art/Talking Heads/Santa Talking.png" id="3_weyka"]
+[ext_resource type="FontFile" uid="uid://xnkktihrvv7a" path="res://assets/upheavtt.ttf" id="4_6e13i"]
+[ext_resource type="Script" path="res://scripts/Text.gd" id="5_jher7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsr8h"]
-atlas = ExtResource("3_l22cj")
+atlas = ExtResource("1_hx4qw")
 region = Rect2(0, 0, 36, 45)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kd745"]
-atlas = ExtResource("3_l22cj")
+atlas = ExtResource("1_hx4qw")
 region = Rect2(36, 0, 36, 45)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a2qnn"]
-atlas = ExtResource("3_l22cj")
+atlas = ExtResource("1_hx4qw")
 region = Rect2(72, 0, 36, 45)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s571c"]
-atlas = ExtResource("2_rxk20")
+atlas = ExtResource("2_cowg8")
 region = Rect2(0, 0, 57, 58)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mdyxw"]
-atlas = ExtResource("2_rxk20")
+atlas = ExtResource("2_cowg8")
 region = Rect2(57, 0, 57, 58)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5efqi"]
-atlas = ExtResource("2_rxk20")
+atlas = ExtResource("2_cowg8")
 region = Rect2(0, 0, 57, 58)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fksf0"]
-atlas = ExtResource("1_nmfna")
+atlas = ExtResource("3_weyka")
 region = Rect2(0, 0, 48, 52)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_taco6"]
-atlas = ExtResource("1_nmfna")
+atlas = ExtResource("3_weyka")
 region = Rect2(48, 0, 48, 52)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_274wu"]
-atlas = ExtResource("1_nmfna")
+atlas = ExtResource("3_weyka")
 region = Rect2(96, 0, 48, 52)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o6082"]
@@ -177,10 +173,10 @@ tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.0333333),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": ["Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?"]
+"values": []
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -213,10 +209,10 @@ tracks/3/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(-0.0333333),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [0.0]
+"values": []
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1505,9 +1501,6 @@ tracks/8/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ukn4b"]
 _data = {
 "Death": SubResource("Animation_gsb30"),
-"End_game": ExtResource("4_m30rr"),
-"End_game_Enter": ExtResource("5_fdy5k"),
-"Fight": ExtResource("6_x8v4b"),
 "Fight1": SubResource("Animation_18763"),
 "Fight2": SubResource("Animation_yhby6"),
 "Fight3": SubResource("Animation_6akiy"),
@@ -1516,7 +1509,6 @@ _data = {
 "Fight6": SubResource("Animation_0guhv"),
 "Fight7": SubResource("Animation_cwnsc"),
 "Fight8": SubResource("Animation_jsf7v"),
-"Pre-Game": ExtResource("7_rxn1t"),
 "RESET": SubResource("Animation_3qk5v")
 }
 
@@ -1529,7 +1521,7 @@ border_width_bottom = 5
 border_color = Color(5.29438e-07, 0.452446, 0.275462, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_73bwq"]
-font = ExtResource("4_0utwy")
+font = ExtResource("4_6e13i")
 font_size = 18
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
@@ -1552,7 +1544,7 @@ position = Vector2(1035, 498)
 rotation = 0.127409
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_o6082")
-animation = &"Elf Talking"
+animation = &"Rudolph Talking"
 autoplay = "Elf_Quiet"
 flip_h = true
 
@@ -1563,10 +1555,10 @@ libraries = {
 autoplay = "HeadRotation"
 
 [node name="MainAnimator" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_ukn4b")
 }
-autoplay = "Pre-Game"
 
 [node name="Left Text" type="MarginContainer" parent="."]
 offset_left = 226.0
@@ -1596,7 +1588,7 @@ label_settings = SubResource("LabelSettings_73bwq")
 autowrap_mode = 3
 visible_characters = 0
 visible_ratio = 0.0
-script = ExtResource("5_pkixt")
+script = ExtResource("5_jher7")
 
 [node name="Right Text" type="MarginContainer" parent="."]
 offset_left = 532.0
@@ -1621,7 +1613,7 @@ custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Turn around old man. You can’t stop us. We’re done working for you. Rudolph has shown us the light."
+text = "AAAARRRRRRRRRRRRRGGGGGGHHHH!!!"
 label_settings = SubResource("LabelSettings_73bwq")
 autowrap_mode = 3
-script = ExtResource("5_pkixt")
+script = ExtResource("5_jher7")

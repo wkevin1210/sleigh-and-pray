@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://kap0dsdl7cw5" path="res://assets/Sounds/cold-wind-sound-effect-127448.wav" id="7_f4npi"]
 [ext_resource type="PackedScene" uid="uid://ds77gcxom6nth" path="res://Scenes/boss.tscn" id="7_m2h8r"]
 [ext_resource type="AudioStream" uid="uid://cm5d4xx5b5dxu" path="res://assets/Sounds/Carol_of_the_Bells_Metal_Version.wav" id="8_e7cbh"]
-[ext_resource type="PackedScene" uid="uid://briletg34gtu4" path="res://Scenes/Talking Heads Hud.tscn" id="10_bcnws"]
+[ext_resource type="PackedScene" uid="uid://oa8ocuj6mc5h" path="res://Scenes/IntroDialogue.tscn" id="11_o5bq8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1xdj"]
 size = Vector2(1164, 163)
@@ -123,7 +123,7 @@ shape = SubResource("RectangleShape2D_xwplh")
 [node name="Boss" parent="." instance=ExtResource("7_m2h8r")]
 position = Vector2(569, 5)
 
-[node name="Control" parent="." instance=ExtResource("10_bcnws")]
+[node name="Control" parent="." instance=ExtResource("11_o5bq8")]
 process_mode = 3
 
 [node name="CutSceneTimer" type="Timer" parent="."]

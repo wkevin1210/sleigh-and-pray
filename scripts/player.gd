@@ -92,6 +92,9 @@ func _on_hook_hooked(hooked_position: Variant) -> void:
 		await clear
 		set_collision_layer_value(1, true)
 		set_collision_mask_value(1, true)
+	else:
+		set_collision_layer_value(1, true)
+		set_collision_mask_value(1, true)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

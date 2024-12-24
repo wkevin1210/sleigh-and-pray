@@ -2,7 +2,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var blood : PackedScene = preload("res://Scenes/cough.tscn")
+	var blood : PackedScene = preload("res://gpu_particles_2d.tscn")
 	var splatter : GPUParticles2D = blood.instantiate()
 	add_child(splatter)
 	splatter.position = Vector2(900, 900)

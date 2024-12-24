@@ -4,11 +4,12 @@ extends CharacterBody2D
 @onready var animator: AnimatedSprite2D = get_node('AnimatedSprite2D')
 @onready var bouncer: CollisionShape2D = get_node("BounceBox/CollisionShape2D")
 @onready var collider: CollisionShape2D = get_node("CollisionShape2D")
-@onready var snow_splash: GPUParticles2D = get_node("GPUParticles2D")
+@onready var snow_splash = preload("res://gpu_particles_2d.tscn")
 var alive = true
 
 #Movement code
 var move_speed = 200
+	
 func _physics_process(_delta: float) -> void:
 	if alive:
 		var direction = global_position.direction_to(player.global_position)
@@ -27,7 +28,9 @@ func _physics_process(_delta: float) -> void:
 #Take damage
 var health = 1
 func take_damage():
-	snow_splash.emitting = true
+	var splatter: GPUParticles2D = snow_splash.instantiate()
+	add_child(splatter)
+	splatter.emitting = true
 	health -= 1
 	if health == 0:
 		alive = false

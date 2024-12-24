@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://borcste1krshn"]
+
+[ext_resource type="Texture2D" uid="uid://r1khpq5fnyt7" path="res://assets/Art/Snowfall.png" id="1_l78bo"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pahny"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 10.0
+initial_velocity_min = 533.34
+initial_velocity_max = 675.56
+gravity = Vector3(0, 0, 0)
+color = Color(0.685733, 3.10443e-06, 5.77569e-07, 1)
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+rotation = 0.000173514
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_pahny")
+texture = ExtResource("1_l78bo")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0

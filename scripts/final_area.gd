@@ -14,6 +14,8 @@ var end = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	preload("res://Scenes/cough.tscn")
+	preload("res://Scenes/Breath.tscn")
 	var transition : AnimationPlayer = get_node("TransitionScreen/AnimationPlayer")
 	transition.play("Fade_From_White")
 	await transition.animation_finished

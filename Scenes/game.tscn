@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://x3uqphg7caio"]
+[gd_scene load_steps=16 format=3 uid="uid://x3uqphg7caio"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_c5ygc"]
 [ext_resource type="PackedScene" uid="uid://du8dyk7a1ot0x" path="res://Scenes/background.tscn" id="1_ut0j4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/spawn_path.gd" id="3_51qkx"]
 [ext_resource type="Texture2D" uid="uid://r1khpq5fnyt7" path="res://assets/Art/Snowfall.png" id="4_ddt26"]
 [ext_resource type="PackedScene" uid="uid://ddcfoi00wsy62" path="res://Scenes/enemy.tscn" id="4_vqy2q"]
+[ext_resource type="AudioStream" uid="uid://kap0dsdl7cw5" path="res://assets/Sounds/cold-wind-sound-effect-127448.wav" id="7_f4npi"]
 [ext_resource type="PackedScene" uid="uid://ds77gcxom6nth" path="res://Scenes/boss.tscn" id="7_m2h8r"]
 [ext_resource type="AudioStream" uid="uid://cm5d4xx5b5dxu" path="res://assets/Sounds/Carol_of_the_Bells_Metal_Version.wav" id="8_e7cbh"]
 [ext_resource type="PackedScene" uid="uid://briletg34gtu4" path="res://Scenes/Talking Heads Hud.tscn" id="10_bcnws"]
@@ -77,18 +78,28 @@ unique_name_in_owner = true
 process_mode = 3
 position = Vector2(-576, -324)
 stream = ExtResource("8_e7cbh")
+bus = &"Music"
+
+[node name="Wind" type="AudioStreamPlayer2D" parent="SpawnPath"]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("7_f4npi")
+volume_db = 7.76
 autoplay = true
 bus = &"Music"
 
 [node name="Enemy" parent="." instance=ExtResource("4_vqy2q")]
-position = Vector2(641, 155)
+position = Vector2(641, 167)
+rotation = 2.06238
 
 [node name="Enemy2" parent="." instance=ExtResource("4_vqy2q")]
-position = Vector2(493, 160)
+position = Vector2(497, 164)
+rotation = 0.998652
 
 [node name="Player" parent="." instance=ExtResource("2_n6qu3")]
 unique_name_in_owner = true
-position = Vector2(576, 324)
+position = Vector2(575, 355)
+rotation = -1.57029
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 collision_layer = 5
@@ -117,13 +128,13 @@ process_mode = 3
 
 [node name="CutSceneTimer" type="Timer" parent="."]
 process_mode = 2
-wait_time = 27.0
+wait_time = 32.3
 one_shot = true
 autostart = true
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="transitioned" from="Reset/TransitionScreen" to="." method="_on_transition_screen_transitioned"]
 [connection signal="body_entered" from="TransitionArea" to="." method="_on_area_2d_body_entered"]
-[connection signal="finished" from="SpawnPath/Music" to="." method="_on_music_finished"]
+[connection signal="finished" from="SpawnPath/Wind" to="." method="_on_wind_finished"]
 [connection signal="boss_hit" from="Boss" to="." method="_on_boss_boss_hit"]
 [connection signal="timeout" from="CutSceneTimer" to="." method="_on_cut_scene_timer_timeout"]

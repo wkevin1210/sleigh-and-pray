@@ -15,7 +15,8 @@ var game_over = false
 func _ready() -> void:
 	$CutSceneTimer.wait_time = $Control/MainAnimator.current_animation_length - 1
 	get_tree().paused = true
-	%Music.play()
+	%Wind.play()
+	
 
 func _physics_process(delta: float) -> void:
 	if obs_last_spawn >= obs_spawn_dist and not game_over:
@@ -83,4 +84,10 @@ func _on_transition_screen_transitioned() -> void:
 
 func _on_cut_scene_timer_timeout() -> void:
 	print("!")
+	%Music.play()
+	%Wind.stop()
 	get_tree().paused = false
+
+
+func _on_wind_finished() -> void:
+	%Wind.play()

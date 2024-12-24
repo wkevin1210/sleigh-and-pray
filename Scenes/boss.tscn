@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://ds77gcxom6nth"]
+[gd_scene load_steps=45 format=3 uid="uid://ds77gcxom6nth"]
 
 [ext_resource type="Texture2D" uid="uid://bkmuu5ah5pqml" path="res://assets/Art/Sleigh.png" id="1_1gnui"]
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_8i8d2"]
@@ -1583,6 +1583,9 @@ font_size = 18
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igan3"]
+size = Vector2(84, 143)
+
 [node name="Boss" type="CharacterBody2D" groups=["Boss"]]
 z_index = 4
 texture_filter = 1
@@ -1733,4 +1736,11 @@ size_flags_vertical = 0
 text = "Distance:"
 label_settings = SubResource("LabelSettings_cx0j0")
 
+[node name="Elf_hitter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elf_hitter"]
+position = Vector2(0, 134.5)
+shape = SubResource("RectangleShape2D_igan3")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Elf_hitter" to="." method="_on_elf_hitter_body_entered"]

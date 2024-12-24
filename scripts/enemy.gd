@@ -37,6 +37,12 @@ func take_damage():
 		$AudioStreamPlayer2D.play()
 		animator.play("Death")
 		
+func get_hit():
+	health -= 1
+	if health == 0:
+		alive = false
+		$AudioStreamPlayer2D.play()
+		animator.play("Death")
 
 #Collision code
 var push_strength = 325

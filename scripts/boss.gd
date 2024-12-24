@@ -61,3 +61,8 @@ func take_damage():
 
 func _on_timer_timeout() -> void:
 	target_x = randi_range(300, 800)
+
+
+func _on_elf_hitter_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemy"):
+		body.get_hit()

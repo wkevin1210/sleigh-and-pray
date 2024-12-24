@@ -47,8 +47,6 @@ func shoot():
 func _on_final_area_dialogue() -> void:
 	paused = true
 
-
-
 func _on_main_animator_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "End_game":
 		paused = false

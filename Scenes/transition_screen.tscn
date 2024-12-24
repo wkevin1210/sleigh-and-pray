@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://df0lh6sj5blq5"]
 
-[ext_resource type="Script" path="res://Scenes/transition_screen.gd" id="1_cngvm"]
+[ext_resource type="Script" path="res://scripts/transition_screen.gd" id="1_cngvm"]
 
 [sub_resource type="Animation" id="Animation_6p3fk"]
 resource_name = "Fade_From_White"

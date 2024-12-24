@@ -414,6 +414,7 @@ tracks/9/keys = {
 [sub_resource type="Animation" id="Animation_rw8kg"]
 resource_name = "Pre-Game"
 length = 36.0
+
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

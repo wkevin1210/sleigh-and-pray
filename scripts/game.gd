@@ -13,6 +13,8 @@ var enemy_spawn_count = 2
 var game_over = false
 
 func _ready() -> void:
+	$CutSceneTimer.wait_time = $Control/MainAnimator.current_animation_length - 1
+	get_tree().paused = true
 	%Music.play()
 
 func _physics_process(delta: float) -> void:
@@ -77,3 +79,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_transition_screen_transitioned() -> void:
 	get_tree().change_scene_to_packed(end_game)
+
+
+func _on_cut_scene_timer_timeout() -> void:
+	print("!")
+	get_tree().paused = false

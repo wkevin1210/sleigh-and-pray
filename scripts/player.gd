@@ -20,6 +20,8 @@ var hook_direction
 var look_position
 var hooking = false
 var speed_added = false
+var overlap = false
+signal clear
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -86,5 +88,18 @@ func _on_hook_hooked(hooked_position: Variant) -> void:
 	hooking = false
 	speed_added = false
 	
-	set_collision_layer_value(1, true)
-	set_collision_mask_value(1, true)
+	if overlap:
+		await clear
+		set_collision_layer_value(1, true)
+		set_collision_mask_value(1, true)
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Pusher"):
+		overlap = true
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Pusher"):
+		overlap = false
+		clear

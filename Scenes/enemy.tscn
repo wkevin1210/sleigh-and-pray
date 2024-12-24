@@ -92,7 +92,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a21n0"]
-radius = 11.6634
+radius = 12.5606
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3686f"]
 radius = 15.0
@@ -117,7 +117,7 @@ position = Vector2(-1, 0)
 scale = Vector2(1.1146, 1.1146)
 shape = SubResource("CircleShape2D_a21n0")
 
-[node name="BounceBox" type="Area2D" parent="."]
+[node name="BounceBox" type="Area2D" parent="." groups=["Pusher"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BounceBox"]
 position = Vector2(-1, 0)

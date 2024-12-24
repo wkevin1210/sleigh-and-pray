@@ -7,11 +7,13 @@ func _ready() -> void:
 	add_child(splatter)
 	splatter.position = Vector2(900, 900)
 	splatter.emitting = true
+	
 	var breathe : PackedScene = preload("res://Scenes/Breath.tscn")
-	var breath : GPUParticles2D = blood.instantiate()
+	var breath : GPUParticles2D = breathe.instantiate()
 	add_child(breath)
 	breath.position = Vector2(900, 900)
 	breath.emitting = true
+	
 	var coughing : PackedScene = preload("res://Scenes/cough.tscn")
 	var cough : GPUParticles2D = coughing.instantiate()
 	add_child(cough)

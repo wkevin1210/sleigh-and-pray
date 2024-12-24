@@ -6,6 +6,7 @@ var shoot_timer = 0.3
 var fire_rate = 0.3
 var look_position
 var end_game = false
+var paused = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,9 +27,10 @@ func _physics_process(delta: float) -> void:
 	elif direction == Vector2.ZERO:
 		velocity = Vector2(0,0)
 		
-	look_position = get_global_mouse_position()
-	look_at(look_position)
-	move_and_slide()
+	if not paused:	
+		look_position = get_global_mouse_position()
+		look_at(look_position)
+		move_and_slide()
 
 @export var damage = 10
 
@@ -40,3 +42,14 @@ func shoot():
 	new_bullet.global_position = %ShootingPoint.global_position
 	new_bullet.global_rotation = %ShootingPoint.global_rotation
 	%ShootingPoint.add_child(new_bullet)
+
+
+func _on_final_area_dialogue() -> void:
+	paused = true
+
+
+
+func _on_main_animator_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "End_game":
+		paused = false
+		end_game = true

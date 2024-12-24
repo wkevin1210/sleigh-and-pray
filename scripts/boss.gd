@@ -11,10 +11,7 @@ var just_hit = false
 var target_x = 0
 signal boss_hit
 
-
-
 func _ready() -> void:
-	var distance_to_player = global_position.distance_to(player.global_position)
 	velocity.y = -400
 
 func _process(delta: float) -> void:

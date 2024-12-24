@@ -1527,6 +1527,7 @@ outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Control" type="CanvasLayer"]
+visible = false
 
 [node name="Left Side" type="AnimatedSprite2D" parent="."]
 z_index = 2
@@ -1534,7 +1535,7 @@ position = Vector2(117, 489)
 rotation = 0.127409
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_o6082")
-animation = &"Santa_Quiet"
+animation = &"Santa Talking"
 autoplay = "Rudolph Talking"
 
 [node name="Right Side" type="AnimatedSprite2D" parent="."]
@@ -1560,7 +1561,6 @@ libraries = {
 }
 
 [node name="Left Text" type="MarginContainer" parent="."]
-visible = false
 offset_left = 226.0
 offset_top = 546.0
 offset_right = 626.0
@@ -1616,6 +1616,4 @@ size_flags_vertical = 0
 text = "AAAARRRRRRRRRRRRRGGGGGGHHHH!!!"
 label_settings = SubResource("LabelSettings_73bwq")
 autowrap_mode = 3
-visible_characters = 0
-visible_ratio = 0.0
 script = ExtResource("5_jher7")

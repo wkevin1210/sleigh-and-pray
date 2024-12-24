@@ -1,10 +1,14 @@
-[gd_scene load_steps=32 format=3 uid="uid://briletg34gtu4"]
+[gd_scene load_steps=36 format=3 uid="uid://briletg34gtu4"]
 
 [ext_resource type="Texture2D" uid="uid://b0rst5lf4ufci" path="res://assets/Art/Talking Heads/Santa Talking.png" id="1_nmfna"]
 [ext_resource type="Texture2D" uid="uid://bfc68jyijo8bl" path="res://assets/Art/Talking Heads/Rudolph talking.png" id="2_rxk20"]
 [ext_resource type="Texture2D" uid="uid://cvby4k7b64k4a" path="res://assets/Art/Talking Heads/Elf Talking.png" id="3_l22cj"]
 [ext_resource type="FontFile" uid="uid://xnkktihrvv7a" path="res://assets/upheavtt.ttf" id="4_0utwy"]
+[ext_resource type="Animation" path="res://assets/Animations/End_game.res" id="4_m30rr"]
+[ext_resource type="Animation" path="res://assets/Animations/End_game_Enter.res" id="5_fdy5k"]
 [ext_resource type="Script" path="res://scripts/Text.gd" id="5_pkixt"]
+[ext_resource type="Animation" path="res://assets/Animations/Fight.res" id="6_x8v4b"]
+[ext_resource type="Animation" path="res://assets/Animations/Pre-Game.res" id="7_rxn1t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsr8h"]
 atlas = ExtResource("3_l22cj")
@@ -163,91 +167,92 @@ _data = {
 "RESET": SubResource("Animation_owmja")
 }
 
-[sub_resource type="Animation" id="Animation_3qk5v"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_gsb30"]
+resource_name = "Death"
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
+tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(-0.0333333),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
+"update": 1,
+"values": ["Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Right Text:visible")
+tracks/1/path = NodePath("Right Text/MarginContainer/Right Text:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": ["AAAARRRRRRRRRRRRRGGGGGGHHHH!!!"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Left Side:visible")
+tracks/2/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Right Side:visible")
+tracks/3/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(-0.0333333),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Left Text/MarginContainer/Left Text:text")
+tracks/4/path = NodePath("Left Text:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Give it up, Santa! I made a career out of being ahead of you."]
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
+tracks/5/path = NodePath("Right Text:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Left Text:visible")
+tracks/6/path = NodePath("Right Side:animation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(-0.0333333, 0, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true]
+"values": [&"Elf Talking", &"Rudolph Talking", &"Rudolph_Quiet"]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -259,19 +264,43 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Santa Talking"]
+"values": [&"Santa_Quiet"]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath(".:visible")
+tracks/8/path = NodePath("Left Side:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Right Side:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_18763"]
@@ -1362,92 +1391,91 @@ tracks/10/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_gsb30"]
-resource_name = "Death"
-length = 4.0
+[sub_resource type="Animation" id="Animation_3qk5v"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:text")
+tracks/0/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Right Text/MarginContainer/Right Text:text")
+tracks/1/path = NodePath("Right Text:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["AAAARRRRRRRRRRRRRGGGGGGHHHH!!!"]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
+tracks/2/path = NodePath("Left Side:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 1.0]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
+tracks/3/path = NodePath("Right Side:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Left Text:visible")
+tracks/4/path = NodePath("Left Text/MarginContainer/Left Text:text")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": ["Give it up, Santa! I made a career out of being ahead of you."]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Right Text:visible")
+tracks/5/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Right Side:animation")
+tracks/6/path = NodePath("Left Text:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(-0.0333333, 0, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Elf Talking", &"Rudolph Talking", &"Rudolph_Quiet"]
+"values": [true]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -1459,48 +1487,27 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"Santa_Quiet"]
+"values": [&"Santa Talking"]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Left Side:visible")
+tracks/8/path = NodePath(".:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Right Side:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath(".:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ukn4b"]
 _data = {
 "Death": SubResource("Animation_gsb30"),
+"End_game": ExtResource("4_m30rr"),
+"End_game_Enter": ExtResource("5_fdy5k"),
+"Fight": ExtResource("6_x8v4b"),
 "Fight1": SubResource("Animation_18763"),
 "Fight2": SubResource("Animation_yhby6"),
 "Fight3": SubResource("Animation_6akiy"),
@@ -1509,6 +1516,7 @@ _data = {
 "Fight6": SubResource("Animation_0guhv"),
 "Fight7": SubResource("Animation_cwnsc"),
 "Fight8": SubResource("Animation_jsf7v"),
+"Pre-Game": ExtResource("7_rxn1t"),
 "RESET": SubResource("Animation_3qk5v")
 }
 
@@ -1544,7 +1552,7 @@ position = Vector2(1035, 498)
 rotation = 0.127409
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_o6082")
-animation = &"Rudolph Talking"
+animation = &"Elf Talking"
 autoplay = "Elf_Quiet"
 flip_h = true
 
@@ -1613,7 +1621,7 @@ custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "AAAARRRRRRRRRRRRRGGGGGGHHHH!!!"
+text = "Turn around old man. You can’t stop us. We’re done working for you. Rudolph has shown us the light."
 label_settings = SubResource("LabelSettings_73bwq")
 autowrap_mode = 3
 script = ExtResource("5_pkixt")

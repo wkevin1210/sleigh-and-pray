@@ -83,7 +83,6 @@ func _on_transition_screen_transitioned() -> void:
 
 
 func _on_cut_scene_timer_timeout() -> void:
-	print("!")
 	%Music.play()
 	%Wind.stop()
 	get_tree().paused = false

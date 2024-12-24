@@ -10,6 +10,7 @@ signal dialogue
 @onready var BreathPos : Node2D = get_node("Rudolph/AnimatedSprite2D/BreathPos")
 @onready var talk_canvas : CanvasLayer = $"%Final Talk"
 @onready var talk : AnimationPlayer = get_node("Final Talk/MainAnimator")
+var end = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,7 +26,8 @@ func _on_fall_trigger_body_entered(body: Node2D) -> void:
 	
 
 func _on_dialogue_trigger_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and not end:
+		end = true
 		Rudolph.play("Arm_Down_Breathing")
 		talk_canvas.visible = true
 		talk.play("End_game")
@@ -40,7 +42,7 @@ func _on_animated_sprite_2d_animation_looped() -> void:
 	breath.emitting = true
 
 
-func _on_main_animator_animation_finished(anim_name: StringName) -> void:
+func _on_main_animator_animation_finished(_anim_name: StringName) -> void:
 	talk_canvas.visible = false
 
 func _cough():

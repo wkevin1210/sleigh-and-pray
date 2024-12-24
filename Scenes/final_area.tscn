@@ -1,0 +1,1445 @@
+[gd_scene load_steps=74 format=3 uid="uid://covgjwebxradd"]
+
+[ext_resource type="Texture2D" uid="uid://ygnac6vpeewf" path="res://assets/Art/Final Area/Main.png" id="1_fof3x"]
+[ext_resource type="Script" path="res://scripts/final_area.gd" id="1_q1abb"]
+[ext_resource type="Texture2D" uid="uid://dn154s8kph4di" path="res://assets/Art/Final Area/Dying Rudolph.png" id="2_clg41"]
+[ext_resource type="Texture2D" uid="uid://r1khpq5fnyt7" path="res://assets/Art/Snowfall.png" id="4_3quns"]
+[ext_resource type="Script" path="res://Scenes/rudolph.gd" id="4_8l0xj"]
+[ext_resource type="Script" path="res://scripts/player_End_Area.gd" id="4_fcokj"]
+[ext_resource type="Texture2D" uid="uid://dn618878u0iib" path="res://assets/Art/Santa Throw.png" id="5_my8wv"]
+[ext_resource type="Texture2D" uid="uid://dbud5uaxne41j" path="res://assets/Art/Santa Grapple.png" id="6_e4ovh"]
+[ext_resource type="Texture2D" uid="uid://cxj5ygumqnsl0" path="res://assets/Art/santa run.png" id="7_sqv6q"]
+[ext_resource type="Script" path="res://scripts/animated_sprite_2d.gd" id="8_pob46"]
+[ext_resource type="PackedScene" uid="uid://df0lh6sj5blq5" path="res://Scenes/transition_screen.tscn" id="11_ormx6"]
+[ext_resource type="Texture2D" uid="uid://cvby4k7b64k4a" path="res://assets/Art/Talking Heads/Elf Talking.png" id="11_q4owg"]
+[ext_resource type="Texture2D" uid="uid://bfc68jyijo8bl" path="res://assets/Art/Talking Heads/Rudolph talking.png" id="12_03maj"]
+[ext_resource type="AudioStream" uid="uid://kap0dsdl7cw5" path="res://assets/Sounds/cold-wind-sound-effect-127448.wav" id="12_apo4e"]
+[ext_resource type="Texture2D" uid="uid://b0rst5lf4ufci" path="res://assets/Art/Talking Heads/Santa Talking.png" id="13_gr3y7"]
+[ext_resource type="FontFile" uid="uid://xnkktihrvv7a" path="res://assets/upheavtt.ttf" id="14_7dij4"]
+[ext_resource type="Script" path="res://scripts/Text.gd" id="15_h5yr5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qolq"]
+size = Vector2(592.5, 43)
+
+[sub_resource type="Gradient" id="Gradient_5viwf"]
+offsets = PackedFloat32Array(0, 0.492447, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.453172, 0.453172, 0.453172, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p5yae"]
+gradient = SubResource("Gradient_5viwf")
+
+[sub_resource type="Gradient" id="Gradient_gs543"]
+colors = PackedColorArray(0.347318, 0.452264, 0.480507, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tl8v4"]
+gradient = SubResource("Gradient_gs543")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7jw0t"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 38.54
+angle_min = 1.07288e-05
+angle_max = 10.9
+direction = Vector3(1, -1, 0)
+spread = 44.067
+initial_velocity_max = 20.26
+gravity = Vector3(0, -68, 0)
+color_ramp = SubResource("GradientTexture1D_tl8v4")
+color_initial_ramp = SubResource("GradientTexture1D_p5yae")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egr4q"]
+atlas = ExtResource("2_clg41")
+region = Rect2(285, 0, 57, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtowf"]
+atlas = ExtResource("2_clg41")
+region = Rect2(114, 0, 57, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auysw"]
+atlas = ExtResource("2_clg41")
+region = Rect2(171, 0, 57, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u68qj"]
+atlas = ExtResource("2_clg41")
+region = Rect2(285, 0, 57, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxe8j"]
+atlas = ExtResource("2_clg41")
+region = Rect2(342, 0, 57, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd2x5"]
+atlas = ExtResource("2_clg41")
+region = Rect2(57, 0, 57, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbxyi"]
+atlas = ExtResource("2_clg41")
+region = Rect2(228, 0, 57, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qeioj"]
+atlas = ExtResource("2_clg41")
+region = Rect2(0, 0, 57, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0dlqw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egr4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtowf")
+}],
+"loop": true,
+"name": &"Arm_Down_Breathing",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auysw")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u68qj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxe8j")
+}],
+"loop": false,
+"name": &"Die",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd2x5")
+}],
+"loop": false,
+"name": &"Fall",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbxyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qeioj")
+}],
+"loop": true,
+"name": &"Reaching_Breathing",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e68ku"]
+radius = 24.2294
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2mki"]
+size = Vector2(206.342, 20.0462)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_io5b7"]
+size = Vector2(48.1667, 30.7493)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u1k1r"]
+radius = 6.0
+height = 18.6667
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_12lgk"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 10.0
+initial_velocity_min = 21.95
+initial_velocity_max = 164.17
+gravity = Vector3(0, 0, 0)
+color = Color(0.685733, 3.10443e-06, 5.77569e-07, 1)
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iane8"]
+atlas = ExtResource("5_my8wv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nx6m"]
+atlas = ExtResource("5_my8wv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxks1"]
+atlas = ExtResource("5_my8wv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si4tq"]
+atlas = ExtResource("6_e4ovh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5uy6"]
+atlas = ExtResource("6_e4ovh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swh2r"]
+atlas = ExtResource("7_sqv6q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyy1k"]
+atlas = ExtResource("7_sqv6q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58str"]
+atlas = ExtResource("7_sqv6q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oo63r"]
+atlas = ExtResource("7_sqv6q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kco0n"]
+atlas = ExtResource("7_sqv6q")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7mly"]
+atlas = ExtResource("7_sqv6q")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jl5j7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iane8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nx6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nx6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxks1")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si4tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si4tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5uy6")
+}],
+"loop": true,
+"name": &"Grapple Throw",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swh2r")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyy1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58str")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oo63r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58str")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyy1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kco0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7mly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kco0n")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 16.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b1jgi"]
+radius = 165.647
+height = 361.412
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ui4m1"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(3.59, 0, 0)
+emission_shape_scale = Vector3(1, 100, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+initial_velocity_max = 35.56
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsr8h"]
+atlas = ExtResource("11_q4owg")
+region = Rect2(0, 0, 36, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd745"]
+atlas = ExtResource("11_q4owg")
+region = Rect2(36, 0, 36, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2qnn"]
+atlas = ExtResource("11_q4owg")
+region = Rect2(72, 0, 36, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s571c"]
+atlas = ExtResource("12_03maj")
+region = Rect2(0, 0, 57, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdyxw"]
+atlas = ExtResource("12_03maj")
+region = Rect2(57, 0, 57, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5efqi"]
+atlas = ExtResource("12_03maj")
+region = Rect2(0, 0, 57, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fksf0"]
+atlas = ExtResource("13_gr3y7")
+region = Rect2(0, 0, 48, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taco6"]
+atlas = ExtResource("13_gr3y7")
+region = Rect2(48, 0, 48, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_274wu"]
+atlas = ExtResource("13_gr3y7")
+region = Rect2(96, 0, 48, 52)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6082"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsr8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd745")
+}],
+"loop": true,
+"name": &"Elf Talking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2qnn")
+}],
+"loop": true,
+"name": &"Elf_Quiet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s571c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdyxw")
+}],
+"loop": true,
+"name": &"Rudolph Talking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5efqi")
+}],
+"loop": true,
+"name": &"Rudolph_Quiet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fksf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taco6")
+}],
+"loop": true,
+"name": &"Santa Talking",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_274wu")
+}],
+"loop": true,
+"name": &"Santa_Quiet",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_hgwkv"]
+resource_name = "HeadRotation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Side:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.127409, -0.127409]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Side:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.127409, -0.127409]
+}
+
+[sub_resource type="Animation" id="Animation_owmja"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Side:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.127409]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Side:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.127409]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4h016"]
+_data = {
+"HeadRotation": SubResource("Animation_hgwkv"),
+"RESET": SubResource("Animation_owmja")
+}
+
+[sub_resource type="Animation" id="Animation_q1cq7"]
+resource_name = "End_game"
+length = 39.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5, 29, 33.5333, 34),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Pathetic...", "I know Rudolph. I know.", "I know more than you’d think, Rudolph. I know when you’ve been bad or good…", "I know more than you’d think, Rudolph. I know when you’ve been bad or good…", "And you’ve made the naughty list.
+"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Text/MarginContainer/Right Text:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4, 4.5, 13.5, 14, 18.5, 19, 23.5, 24, 28.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["*cough* We… I… was so close... *cough*... I just wanted… to be free…", "*cough* We… I… was so close... *cough*... I just wanted… to be free…", "Screw you, old man.", "Screw you, old man.", "You’ll never know… *cough*... what this life is like.", "You’ll never know… *cough*... what this life is like.", "You’ll… *cough*... never know what it’s like… dragging that sleigh.", "You’ll… *cough*... never know what it’s like… dragging that sleigh.", "You’ll... never know… *cough*... the true meaning of Christmas.", "You’ll never know… *cough*... the true meaning of Christmas."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.03333, 4, 4.53333, 9, 12.5, 13.5, 14, 17.5, 18.5, 19, 22.5, 23.5, 24, 27.5, 28.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.5, 7.5, 8.5, 29, 32.5, 33.5333, 34, 37.5, 38.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Left Text:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4.53333, 8.5, 29, 33.5, 34, 38.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Right Text:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4, 9, 13.4667, 14, 18.5, 19, 23.5, 24, 28.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Right Side:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3, 9, 12.5, 14, 17.5, 19, 22.5, 24, 27.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"Rudolph Talking", &"Rudolph_Quiet", &"Rudolph Talking", &"Rudolph_Quiet", &"Rudolph Talking", &"Rudolph_Quiet", &"Rudolph Talking", &"Rudolph_Quiet", &"Rudolph Talking", &"Rudolph_Quiet"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Left Side:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4.5, 7.5, 29, 32.5, 34, 37.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"Santa_Quiet", &"Santa Talking", &"Santa_Quiet", &"Santa Talking", &"Santa_Quiet", &"Santa Talking", &"Santa_Quiet"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Left Side:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Right Side:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("%Final Talk/../Rudolph/AnimatedSprite2D:animation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 24.3667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Arm_Down_Breathing", &"Reaching_Breathing"]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("%Final Talk/..")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.0333333, 1.3, 15.2667, 19.4333, 25.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_cough"
+}, {
+"args": [],
+"method": &"_cough"
+}, {
+"args": [],
+"method": &"_cough"
+}, {
+"args": [],
+"method": &"_cough"
+}, {
+"args": [],
+"method": &"_cough"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_18763"]
+resource_name = "Fight"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Text/MarginContainer/Right Text:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Turn around old man. You can’t stop us. We’re done working for you. Rudolph has shown us the light."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Left Text:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Right Text:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Right Side:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(-0.0333333, 0, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"Elf Talking", &"Elf Talking", &"Elf_Quiet"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Left Side:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Santa_Quiet", &"Santa Talking"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Left Side:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Right Side:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_rw8kg"]
+resource_name = "Pre-Game"
+length = 36.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9.75, 23.4667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?", "Don’t do this.", "It didn’t have to end this way."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Text/MarginContainer/Right Text:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5, 13, 14.0667, 20.4833, 23.4667, 24.4667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Turn around old man. You can’t stop us. We’re done working for you. Rudolph has shown us the light.", "We’re finished with looking out for the world. It’s time we started thinking about our own happiness and joy.", "We’re finished with looking out for the world. It’s time we started thinking about our own happiness and joy.", "No more workshops. No more presents. We’re done with Christmas and we’re done with you.", "Go Rudolph! We’ll hold him back!", "Go Rudolph! We’ll hold him back!", "Sorry old man, Christmas is canceled."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.5, 5.03333, 10, 13, 14, 14.0667, 17, 18, 20.4833, 23.4667, 24.4667, 26.5333, 27.5, 29.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4, 5, 8.5, 9.75, 18.2667, 19.5166, 20.4833, 23.4667, 24.7167, 26.5333, 27.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Left Text:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5, 9.75, 18.2667, 20.4833, 24.7167, 27.5, 32.2833),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Right Text:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4.75, 10, 18.0167, 20.7333, 24.4667, 27.75, 32.2833),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Right Side:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3.5, 10, 13, 14, 17, 20.7333, 23.7167, 27.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"Elf Talking", &"Elf_Quiet", &"Elf Talking", &"Elf_Quiet", &"Elf Talking", &"Elf_Quiet", &"Elf Talking", &"Elf_Quiet", &"Elf Talking"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Left Side:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 5, 8.5, 18, 19.5166, 24.7167, 26.7833),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"Santa_Quiet", &"Santa Talking", &"Santa_Quiet", &"Santa Talking", &"Santa_Quiet", &"Santa Talking", &"Santa_Quiet"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Left Side:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 32.2833),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Right Side:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 32.2833),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_wd0th"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Text:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Right Text/MarginContainer/Right Text:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["*cough* We… I… was so close... *cough*... I just wanted… to be free…"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Left Text:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Left Text/MarginContainer/Left Text:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Right Side:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Elf_Quiet"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Right Side:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Left Side:animation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Rudolph Talking"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Left Side:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("%Final Talk/../Rudolph/AnimatedSprite2D:animation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Die"]
+}
+
+[sub_resource type="Animation" id="Animation_7fnlt"]
+resource_name = "Text Scroll Left"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Text:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="Animation" id="Animation_rek8f"]
+resource_name = "End_game_Enter"
+length = 3.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Text/MarginContainer/Left Text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.53333, 2.46667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Pathetic...", "Pathetic...
+", "Pathetic...
+"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Text/MarginContainer/Right Text:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Turn around old man. You can’t stop us. We’re done working for you. Rudolph has shown us the light.", "Turn around old man. You can’t stop us. We’re done working for you. Rudolph has shown us the light."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Right Text/MarginContainer/Right Text:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Left Text/MarginContainer/Left Text:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.53333, 2.46667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Left Text:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Right Text:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Right Side:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Rudolph Talking"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Left Side:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.53333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Santa Talking", &"Santa_Quiet"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Left Side:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Right Side:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ukn4b"]
+_data = {
+"End_game": SubResource("Animation_q1cq7"),
+"End_game_Enter": SubResource("Animation_rek8f"),
+"Fight": SubResource("Animation_18763"),
+"Pre-Game": SubResource("Animation_rw8kg"),
+"RESET": SubResource("Animation_wd0th"),
+"Text Scroll Left": SubResource("Animation_7fnlt")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xmv8"]
+bg_color = Color(0.466667, 0.14902, 0.156863, 0.713726)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(5.29438e-07, 0.452446, 0.275462, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_73bwq"]
+font = ExtResource("14_7dij4")
+font_size = 18
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Final Area" type="Node2D" node_paths=PackedStringArray("player", "Rudolph")]
+script = ExtResource("1_q1abb")
+player = NodePath("Player")
+Rudolph = NodePath("Rudolph/AnimatedSprite2D")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(300, 300)
+scale = Vector2(3, 3)
+texture = ExtResource("1_fof3x")
+
+[node name="AreaBorders" type="Node2D" parent="."]
+
+[node name="TopBorder" type="StaticBody2D" parent="AreaBorders"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaBorders/TopBorder"]
+position = Vector2(299.25, 27.5)
+shape = SubResource("RectangleShape2D_3qolq")
+
+[node name="BotBorder" type="StaticBody2D" parent="AreaBorders"]
+position = Vector2(3, 580)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaBorders/BotBorder"]
+position = Vector2(299.25, 27.5)
+shape = SubResource("RectangleShape2D_3qolq")
+
+[node name="RightBorder" type="StaticBody2D" parent="AreaBorders"]
+position = Vector2(-15, 603)
+rotation = -1.5708
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaBorders/RightBorder"]
+position = Vector2(299.25, 27.5)
+shape = SubResource("RectangleShape2D_3qolq")
+
+[node name="LeftBorder" type="StaticBody2D" parent="AreaBorders"]
+position = Vector2(562, 602)
+rotation = -1.5708
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaBorders/LeftBorder"]
+position = Vector2(299.25, 27.5)
+shape = SubResource("RectangleShape2D_3qolq")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+position = Vector2(60, 54)
+amount = 650
+process_material = SubResource("ParticleProcessMaterial_7jw0t")
+texture = ExtResource("4_3quns")
+lifetime = 41.19
+
+[node name="Rudolph" type="Node2D" parent="."]
+position = Vector2(112.5, 105)
+scale = Vector2(3, 3)
+script = ExtResource("4_8l0xj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rudolph"]
+sprite_frames = SubResource("SpriteFrames_0dlqw")
+animation = &"Die"
+autoplay = "Default"
+
+[node name="DialogueTrigger" type="Area2D" parent="Rudolph/AnimatedSprite2D"]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rudolph/AnimatedSprite2D/DialogueTrigger"]
+position = Vector2(-3.16667, -3.66667)
+rotation = -0.256187
+scale = Vector2(-1.99284, 1.72982)
+shape = SubResource("CircleShape2D_e68ku")
+
+[node name="FallTrigger" type="Area2D" parent="Rudolph/AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rudolph/AnimatedSprite2D/FallTrigger"]
+position = Vector2(62.8333, 29.3333)
+rotation = -0.00437988
+scale = Vector2(1.01286, 1.02187)
+shape = SubResource("RectangleShape2D_d2mki")
+
+[node name="BreathPos" type="Node2D" parent="Rudolph/AnimatedSprite2D"]
+position = Vector2(0.5, 10.6667)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rudolph"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rudolph/StaticBody2D"]
+position = Vector2(-9.71986, -4.99789)
+rotation = -0.588248
+shape = SubResource("RectangleShape2D_io5b7")
+
+[node name="Rudolph Collider" type="StaticBody2D" parent="Rudolph"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rudolph/Rudolph Collider"]
+position = Vector2(0.166667, 7.33333)
+shape = SubResource("CapsuleShape2D_u1k1r")
+
+[node name="Area2D" type="Area2D" parent="Rudolph"]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rudolph/Area2D"]
+position = Vector2(0.166667, 7.33333)
+shape = SubResource("CapsuleShape2D_u1k1r")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Rudolph/Area2D"]
+position = Vector2(0.166667, 3.66667)
+rotation = 1.32798
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_12lgk")
+texture = ExtResource("4_3quns")
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
+z_index = 1
+position = Vector2(317, 522)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("4_fcokj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+rotation = 1.5708
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_jl5j7")
+animation = &"Attack"
+frame = 3
+frame_progress = 0.373554
+script = ExtResource("8_pob46")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-3, -1)
+scale = Vector2(0.0664063, 0.0664063)
+shape = SubResource("CapsuleShape2D_b1jgi")
+
+[node name="ShootingPoint" type="Marker2D" parent="Player"]
+unique_name_in_owner = true
+position = Vector2(15, 9)
+
+[node name="Camera" type="Camera2D" parent="Player"]
+zoom = Vector2(1.92, 1.92)
+limit_left = 0
+limit_top = 0
+limit_right = 600
+limit_bottom = 600
+drag_left_margin = 1.0
+drag_top_margin = 0.0
+drag_right_margin = 1.0
+drag_bottom_margin = 1.0
+editor_draw_drag_margin = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 2
+position = Vector2(129, -144)
+rotation = 1.06983
+scale = Vector2(5.75, 5.75)
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_ui4m1")
+texture = ExtResource("4_3quns")
+lifetime = 6.0
+preprocess = 215.7
+speed_scale = 0.5
+visibility_rect = Rect2(-100, -100, 400, 200)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../GPUParticles2D2")
+
+[node name="TransitionScreen" parent="." instance=ExtResource("11_ormx6")]
+
+[node name="Final Talk" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Left Side" type="AnimatedSprite2D" parent="Final Talk"]
+z_index = 2
+position = Vector2(117, 489)
+rotation = 0.127409
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_o6082")
+animation = &"Rudolph Talking"
+autoplay = "Rudolph Talking"
+
+[node name="Right Side" type="AnimatedSprite2D" parent="Final Talk"]
+z_index = 2
+position = Vector2(1035, 498)
+rotation = 0.127409
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_o6082")
+animation = &"Elf_Quiet"
+autoplay = "Elf_Quiet"
+flip_h = true
+
+[node name="HeadRotation" type="AnimationPlayer" parent="Final Talk"]
+libraries = {
+"": SubResource("AnimationLibrary_4h016")
+}
+autoplay = "HeadRotation"
+
+[node name="MainAnimator" type="AnimationPlayer" parent="Final Talk"]
+libraries = {
+"": SubResource("AnimationLibrary_ukn4b")
+}
+autoplay = "Pre-Game"
+
+[node name="Left Text" type="MarginContainer" parent="Final Talk"]
+offset_left = 226.0
+offset_top = 546.0
+offset_right = 626.0
+offset_bottom = 587.0
+
+[node name="Panel" type="Panel" parent="Final Talk/Left Text"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6xmv8")
+
+[node name="MarginContainer" type="MarginContainer" parent="Final Talk/Left Text"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Left Text" type="Label" parent="Final Talk/Left Text/MarginContainer"]
+z_index = 5
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Just like that? After centuries of bringing happiness and joy to the world, you’re just going to throw it all away?"
+label_settings = SubResource("LabelSettings_73bwq")
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("15_h5yr5")
+
+[node name="Right Text" type="MarginContainer" parent="Final Talk"]
+offset_left = 532.0
+offset_top = 546.0
+offset_right = 932.0
+offset_bottom = 587.0
+
+[node name="Panel" type="Panel" parent="Final Talk/Right Text"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6xmv8")
+
+[node name="MarginContainer" type="MarginContainer" parent="Final Talk/Right Text"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Right Text" type="Label" parent="Final Talk/Right Text/MarginContainer"]
+z_index = 5
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "*cough* We… I… was so close... *cough*... I just wanted… to be free…"
+label_settings = SubResource("LabelSettings_73bwq")
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("15_h5yr5")
+
+[node name="Wind" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("12_apo4e")
+volume_db = 7.76
+autoplay = true
+bus = &"Music"
+
+[connection signal="dialogue" from="." to="." method="_on_dialogue"]
+[connection signal="dialogue" from="." to="Player" method="_on_final_area_dialogue"]
+[connection signal="animation_looped" from="Rudolph/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="body_entered" from="Rudolph/AnimatedSprite2D/DialogueTrigger" to="." method="_on_dialogue_trigger_body_entered"]
+[connection signal="area_entered" from="Rudolph/AnimatedSprite2D/FallTrigger" to="." method="_on_fall_trigger_area_entered"]
+[connection signal="body_entered" from="Rudolph/AnimatedSprite2D/FallTrigger" to="." method="_on_fall_trigger_body_entered"]
+[connection signal="area_entered" from="Rudolph/Area2D" to="Rudolph" method="_on_area_2d_area_entered"]
+[connection signal="animation_finished" from="Final Talk/MainAnimator" to="." method="_on_main_animator_animation_finished"]
+[connection signal="animation_finished" from="Final Talk/MainAnimator" to="Player" method="_on_main_animator_animation_finished"]

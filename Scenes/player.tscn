@@ -144,9 +144,8 @@ script = ExtResource("1_k7o6d")
 rotation = 1.5708
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_jl5j7")
-animation = &"Attack"
-frame = 3
-frame_progress = 0.373554
+animation = &"Idle"
+autoplay = "Idle"
 script = ExtResource("5_rjlqo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

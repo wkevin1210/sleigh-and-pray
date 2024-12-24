@@ -78,20 +78,6 @@ unique_name_in_owner = true
 process_mode = 3
 position = Vector2(-576, -324)
 stream = ExtResource("8_e7cbh")
-autoplay = true
-bus = &"Music"
-
-[node name="Enemy" parent="." instance=ExtResource("4_vqy2q")]
-position = Vector2(641, 155)
-
-[node name="Enemy2" parent="." instance=ExtResource("4_vqy2q")]
-position = Vector2(325, 285)
-=======
-[node name="Music" type="AudioStreamPlayer2D" parent="SpawnPath"]
-unique_name_in_owner = true
-process_mode = 3
-position = Vector2(-576, -324)
-stream = ExtResource("8_e7cbh")
 bus = &"Music"
 
 [node name="Wind" type="AudioStreamPlayer2D" parent="SpawnPath"]
@@ -103,18 +89,17 @@ autoplay = true
 bus = &"Music"
 
 [node name="Enemy" parent="." instance=ExtResource("4_vqy2q")]
-position = Vector2(641, 155)
-rotation = 1.80116
+position = Vector2(641, 167)
+rotation = 2.06238
 
 [node name="Enemy2" parent="." instance=ExtResource("4_vqy2q")]
-position = Vector2(493, 160)
-rotation = 1.27277
->>>>>>> Stashed changes
+position = Vector2(497, 164)
+rotation = 0.998652
 
 [node name="Player" parent="." instance=ExtResource("2_n6qu3")]
 unique_name_in_owner = true
-position = Vector2(576, 324)
-rotation = -1.5708
+position = Vector2(575, 355)
+rotation = -1.57029
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 collision_layer = 5
@@ -150,7 +135,6 @@ autostart = true
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="transitioned" from="Reset/TransitionScreen" to="." method="_on_transition_screen_transitioned"]
 [connection signal="body_entered" from="TransitionArea" to="." method="_on_area_2d_body_entered"]
-[connection signal="finished" from="SpawnPath/Music" to="." method="_on_music_finished"]
 [connection signal="finished" from="SpawnPath/Wind" to="." method="_on_wind_finished"]
 [connection signal="boss_hit" from="Boss" to="." method="_on_boss_boss_hit"]
 [connection signal="timeout" from="CutSceneTimer" to="." method="_on_cut_scene_timer_timeout"]

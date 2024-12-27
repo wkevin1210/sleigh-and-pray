@@ -51,3 +51,7 @@ func _on_main_animator_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "End_game":
 		paused = false
 		end_game = true
+
+
+func _on_rudolph_dead() -> void:
+	end_game = false

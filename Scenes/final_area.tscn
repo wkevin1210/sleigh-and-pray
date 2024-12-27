@@ -1448,6 +1448,8 @@ script = ExtResource("19_a456t")
 
 [connection signal="dialogue" from="." to="Player" method="_on_final_area_dialogue"]
 [connection signal="dialogue" from="." to="Player/AnimatedSprite2D" method="_on_final_area_dialogue"]
+[connection signal="dead" from="Rudolph" to="Player" method="_on_rudolph_dead"]
+[connection signal="dead" from="Rudolph" to="Player/AnimatedSprite2D" method="_on_rudolph_dead"]
 [connection signal="animation_looped" from="Rudolph/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="body_entered" from="Rudolph/AnimatedSprite2D/DialogueTrigger" to="." method="_on_dialogue_trigger_body_entered"]
 [connection signal="area_entered" from="Rudolph/AnimatedSprite2D/FallTrigger" to="." method="_on_fall_trigger_area_entered"]
